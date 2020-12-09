@@ -1,0 +1,145 @@
+﻿</p>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box purple">
+            <div class="portlet-title sbold">
+                <div class="caption no-outline">
+                    <i class="fa fa-user" style="font-size: 20px; color:white"></i>Attandence
+                </div>
+            </div>
+            <div class="portlet-body-grid">
+                <div class="tabbable-line">
+                    <ul class="nav nav-tabs ">
+                        <li class="active">
+                            <a data-target="#tab_1_1" data-toggle="tab" class="uppercase sbold"> Class Attandence</a>
+                        </li>
+                        <li>
+                            <a data-target="#tab_1_2" data-toggle="tab" class="uppercase sbold"> Exam Attandence</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <p />
+                        <div class="tab-pane active" id="tab_1_1">
+                            <form name="frm" novalidate>
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-md-3" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Semester.$invalid && frm.Semester.$touched}" data-toggle="tooltip" data-placement="bottom" title="Semester">
+                                            <select class="bs-select form-control" name="Semester" style="width: 100%" required ng-model="cmbSemester" ng-options="semester.SemesterName for semester in semesterList track by semester.SemesterId " ng-change="entity.SemesterId=cmbSemester.SemesterId">
+                                                <option value="">-- Semester --</option>
+                                            </select>
+                                            <span class="help-block" style="display:block;" ng-if="frm.Semester.$error.required && frm.Semester.$touched">Semester is required</span>
+                                        </div>
+                                        <div class="col-md-6" style="padding: 5px 15px !important" ng-class="{'has-error':frm.SelectCourse.$invalid && frm.SelectCourse.$touched}" data-toggle="tooltip" data-placement="bottom" title="Select Course">
+                                            <select class="bs-select form-control" name="SelectCourse" style="width: 100%" required ng-model="cmbCourse" ng-options="course.CourseCode for course in courseList track by course.CourseId " ng-change="entity.CourseId=cmbCourse.CourseId">
+                                                <option value="" class="form-control">-- Course --</option>
+                                            </select>
+                                            <span class="help-block" style="display:block;" ng-if="frm.SelectCourse.$error.required && frm.SelectCourse.$touched">Course is required</span>
+                                        </div>
+                                        <div class="col-md-3" style="padding: 5px 15px !important">
+                                            <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="No Of Students">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="# of Students" name="NoOfStudents" ng-model="entity.NoOfStudents" maxlength="51" ng-maxlength="50" readonly required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-user font-red"></i>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3" style="padding: 5px 15px !important">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.AttandenceDate.$touched && frm.AttandenceDate.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Attandence Date">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="atDate" placeholder="Attandence Date" name="AttandenceDate" ng-model="entity.AttandenceDate" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.AttandenceDate.$error.required && frm.AttandenceDate.$touched">Attandence Date is required</span>
+                                                <span class="help-block" ng-if="frm.AttandenceDate.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3" style="padding: 5px 15px !important">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.Class.$touched && frm.Class.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Class">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Class#" name="Class" ng-model="entity.Class" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-user font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.Class.$error.required && frm.Class.$touched">Class is required</span>
+                                                <span class="help-block" ng-if="frm.Class.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" style="padding: 5px 15px !important" title="QR Code">
+                                            <input type="button" class="form-control btn btn-success" value="Generate QR Code" name="QrCode" ng-click="QrCode()" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane " id="tab_1_2">
+                            <form name="frm" novalidate>
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-md-3" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Semester.$invalid && frm.Semester.$touched}" data-toggle="tooltip" data-placement="bottom" title="Semester">
+                                            <select class="bs-select form-control" name="Semester" style="width: 100%" required ng-model="cmbSemester" ng-options="semester.SemesterName for semester in semesterList track by semester.SemesterId " ng-change="entity.SemesterId=cmbSemester.SemesterId">
+                                                <option value="">-- Semester --</option>
+                                            </select>
+                                            <span class="help-block" style="display:block;" ng-if="frm.Semester.$error.required && frm.Semester.$touched">Semester is required</span>
+                                        </div>
+                                        <div class="col-md-6" style="padding: 5px 15px !important" ng-class="{'has-error':frm.SelectCourse.$invalid && frm.SelectCourse.$touched}" data-toggle="tooltip" data-placement="bottom" title="Select Course">
+                                            <select class="bs-select form-control" name="SelectCourse" style="width: 100%" required ng-model="cmbCourse" ng-options="course.CourseCode for course in courseList track by course.CourseId " ng-change="entity.CourseId=cmbCourse.CourseId">
+                                                <option value="" class="form-control">-- Course --</option>
+                                            </select>
+                                            <span class="help-block" style="display:block;" ng-if="frm.SelectCourse.$error.required && frm.SelectCourse.$touched">Course is required</span>
+                                        </div>
+                                        <div class="col-md-3" style="padding: 5px 15px !important">
+                                            <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="No Of Students">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="# of Students" name="NoOfStudents" ng-model="entity.NoOfStudents" maxlength="51" ng-maxlength="50" readonly required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-user font-red"></i>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-md-3" style="padding: 5px 15px !important">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.ExamDate.$touched && frm.ExamDate.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Exam Date">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="eDate" placeholder="Exam Date" name="ExamDate" ng-model="entity.ExamDate" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.ExamDate.$error.required && frm.ExamDate.$touched">Exam Date is required</span>
+                                                <span class="help-block" ng-if="frm.ExamDate.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3" style="padding: 5px 15px !important" ng-class="{'has-error':frm.ExamType.$invalid && frm.ExamType.$touched}" data-toggle="tooltip" data-placement="bottom" title="Exam Type">
+                                            <select class="bs-select form-control" name="ExamType" style="width: 100%" required ng-model="cmbExamType" ng-options="examType.MarkTypeName for examType in examList track by examType.MarkTypeId " ng-change="entity.MarkTypeId=cmbExamType.MarkTypeId">
+                                                <option value="">-- Exam Type --</option>
+                                            </select>
+                                            <span class="help-block" style="display:block;" ng-if="frm.ExamType.$error.required && frm.ExamType.$touched">Exam Type is required</span>
+                                        </div>
+
+                                        <div class="col-md-6" style="padding: 5px 15px !important" title="QR Code">
+                                            <input type="button" class="form-control btn btn-success" value="Generate QR Code" name="QrCode" ng-click="QrCode()" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

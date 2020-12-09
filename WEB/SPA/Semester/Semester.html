@@ -1,0 +1,174 @@
+﻿</p>
+<div class="row">
+    <div class="col-md-4">
+        <div class="portlet box purple">
+            <div class="portlet-title sbold">
+                <div class="caption">
+                    <label>
+                        Semester Entry
+                    </label>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <form name="frm">
+                    <div class="row">
+                        <div class="form-body">
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.SemesterType.$invalid && frm.SemesterType.$touched}" data-toggle="tooltip" data-placement="bottom" title="Semester Type">
+                                <select class="bs-select form-control" name="SemesterType" id="txtFocus" style="width: 100%" required ng-model="cmbSemester" ng-click="setSemesterCode()" ng-options="semester.SemesterTypeName for semester in semesterTypeList track by semester.SemesterTypeId" ng-change="entity.SemesterTypeName=cmbSemester.SemesterTypeName; entity.SemesterTypeId=cmbSemester.SemesterTypeId">
+                                    <option value="">-- Semester --</option>
+
+                                </select>
+                                <span class="help-block" style="display:block;" ng-if="frm.SemesterType.$error.required && frm.SemesterType.$touched">Semester is required</span>
+                            </div>
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.YearId.$invalid && frm.YearId.$touched}" data-toggle="tooltip" data-placement="bottom" title="Year Id">
+                                <select class="bs-select form-control" name="YearId" style="width: 100%" required ng-model="cmbYear" ng-click="setSemesterCode()" ng-options="year.YearId for year in yearList track by year.YearId " ng-change="entity.YearId=cmbYear.YearId">
+                                    <option value="">-- Year --</option>
+
+                                </select>
+                                <span class="help-block" style="display:block;" ng-if="frm.YearId.$error.required && frm.YearId.$touched">Year is required</span>
+                            </div>
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.SemesterName.$touched && frm.SemesterName.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Semester Name">
+                                <input type="text" class="form-control" placeholder="Semester Title" name="SemesterName" ng-model="entity.SemesterName" maxlength="51" ng-maxlength="50" required readonly />
+                                <span class="help-block" style="display: block;" ng-if="frm.SemesterName.$error.required && frm.SemesterName.$touched">Semester Name is required!</span>
+                                <span class="help-block" ng-if="frm.SemesterName.$error.maxlength">50 Character Max</span>
+                            </div>
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.BatchNo.$touched && frm.BatchNo.$invalid}" data-toggle="tooltip" data-placement="bottom" title="BatchNo">
+                                <input type="text" class="form-control" placeholder="Batch No." name="BatchNo" ng-model="entity.BatchNo" maxlength="51" ng-maxlength="50" required />
+                                <span class="help-block" style="display: block;" ng-if="frm.BatchNo.$error.required && frm.BatchNo.$touched">BatchNo is required!</span>
+                                <span class="help-block" ng-if="frm.BatchNo.$error.maxlength">50 Character Max</span>
+                            </div>
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.StartDate.$touched && frm.StartDate.$invalid}" data-toggle="tooltip" data-placement="bottom" title="StartDate">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="dtFrom" placeholder="Semester Start Date" name="StartDate" ng-model="entity.StartDate" required>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar font-red"></i>
+                                    </span>
+                                </div>
+                                <span class="help-block" style="display: block;" ng-if="frm.StartDate.$error.required && frm.StartDate.$touched">From is required!</span>
+                            </div>
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.EndDate.$touched && frm.EndDate.$invalid}" data-toggle="tooltip" data-placement="bottom" title="EndDate">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="dtTo" placeholder="Semester End Date" name="EndDate" ng-model="entity.EndDate" required>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar font-red"></i>
+                                    </span>
+                                </div>
+                                <span class="help-block" style="display: block;" ng-if="frm.EndDate.$error.required && frm.EndDate.$touched">To is required!</span>
+                            </div>
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.AddDropStartDate.$touched && frm.AddDropStartDate.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Add-Drop Start Date">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="dtAddDropStart" placeholder="Add-Drop Start Date" name="AddDropStartDate" ng-model="entity.AddDropStartDate" required>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar font-red"></i>
+                                    </span>
+                                </div>
+                                <span class="help-block" style="display: block;" ng-if="frm.AddDropStartDate.$error.required && frm.AddDropStartDate.$touched">Add Drop Start Date is required!</span>
+                            </div>
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.AddDropEndDate.$touched && frm.AddDropEndDate.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Add-Drop End Date">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="dtAddDropEnd" placeholder="Add-Drop End Date" name="AddDropEndDate" ng-model="entity.AddDropEndDate" required>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar font-red"></i>
+                                    </span>
+                                </div>
+                                <span class="help-block" style="display: block;" ng-if="frm.AddDropEndDate.$error.required && frm.AddDropEndDate.$touched">Add Drop End Date is required!</span>
+                            </div>
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.WithdrawStartDate.$touched && frm.WithdrawStartDate.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Withdraw Start Date">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="dtWithdrawStart" placeholder="Withdraw Start Date" name="WithdrawStartDate" ng-model="entity.WithdrawStartDate" required>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar font-red"></i>
+                                    </span>
+                                </div>
+                                <span class="help-block" style="display: block;" ng-if="frm.WithdrawStartDate.$error.required && frm.WithdrawStartDate.$touched">Withdraw Start Date is required!</span>
+                            </div>
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.WithdrawEndDate.$touched && frm.WithdrawEndDate.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Withdraw End Date">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="dtWithdrawEnd" placeholder="Withdraw End Date" name="WithdrawEndDate" ng-model="entity.WithdrawEndDate" required>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar font-red"></i>
+                                    </span>
+                                </div>
+                                <span class="help-block" style="display: block;" ng-if="frm.WithdrawEndDate.$error.required && frm.WithdrawEndDate.$touched">Withdraw End Date is required!</span>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="col-md-3">
+                                        <label class="sbold" style="margin-top: 10px;">Status:</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="mt-radio-inline">
+                                            <label class="mt-radio">
+                                                <input type="radio" name="optionsRadios" ng-value="true" ng-model="entity.IsActive"> Active
+                                                <span></span>
+                                            </label>
+                                            <label class="mt-radio">
+                                                <input type="radio" name="optionsRadios" ng-value="false" ng-model="entity.IsActive"> Inactive
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions" style="padding: 5px 15px !important" block-ui="entryBlock">
+                                <button type="submit" class="btn btn-lg btn-success box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-disabled="frm.$invalid" ng-click="post('save')">Submit</button>
+                                <button type="button" class="btn btn-lg btn-danger box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-show="entity.SemesterId > 0" ng-click="post('delete')">Delete</button>
+                                <button type="button" class="btn btn-lg btn-default box-shadow--8dp" style="min-width:90px !important; margin-bottom: 5px" ng-click="resetForm()">Reset</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="portlet box purple">
+            <div class="portlet-title sbold">
+                <div class="caption">
+                    <label>
+                        Semester
+                    </label>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="tbl-outer">
+                    <table class="responstable table-hover">
+                        <tbody>
+                            <tr class="t-head" style="font-size: 14px !important">
+                                <th class="sbold">#</th>
+                                <th class="sbold text-center" data-th="Details"><span>Semester</span></th>
+                                <th class="sbold text-center">Batch No.</th>
+                                <th class="sbold text-center">Semester Start Date</th>
+                                <th class="sbold text-center">Semester End Date</th>
+                                <th class="sbold text-center">Add-Drop Start Date</th>
+                                <th class="sbold text-center">Add-Drop End Date</th>
+                                <th class="sbold text-center">Withdraw Start Date</th>
+                                <th class="sbold text-center">Withdraw End Date</th>
+                                <th class="sbold text-center">Status</th>
+                            </tr>
+                            <tr dir-paginate="item in entityListPaged | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count" ng-click="rowClick(item)" ng-class="{ 'rowSelected' : entity.SemesterId === item.SemesterId}">
+                                <td class="text-center">{{$index + ((currentPage-1)*PerPage) + 1}}</td>
+                                <td class="text-center"> {{item.SemesterName}} </td>
+                                <td class="text-center"> {{item.BatchNo}} </td>
+                                <td class="text-center"> {{item.StartDate}} </td>
+                                <td class="text-center"> {{item.EndDate}} </td>
+                                <td class="text-center"> {{item.AddDropStartDate}} </td>
+                                <td class="text-center"> {{item.AddDropEndDate}} </td>
+                                <td class="text-center"> {{item.WithdrawStartDate}} </td>
+                                <td class="text-center"> {{item.WithdrawEndDate}} </td>
+                                <td class="text-center"> {{item.IsActive ? 'Active' : 'Inactive' }} </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

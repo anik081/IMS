@@ -1,0 +1,234 @@
+﻿</p>
+<div class="row">
+    <div class="col-md-12">
+        <form name="frm" novalidate>
+            <div class="row">
+                <div class="col-md-4" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Student.$invalid && frm.Student.$touched}" data-toggle="tooltip" data-placement="bottom" title="Student">
+                    <select class="bs-select form-control" id="txtFocus" name="Student" style="width: 100%" required ng-model="cmbStudent" ng-options="student.FullName for student in studentList track by student.StudentId " ng-change="entity.StudentId=cmbStudent.StudentId; entity.FullName= cmbStudent.FullName">
+                        <option value="">-- Student --</option>
+                    </select>
+                    <span class="help-block" style="display:block;" ng-if="frm.Student.$error.required && frm.Student.$touched">Student is required</span>
+                </div>
+                <div class="col-md-2" style="padding:5px 15px !important">
+                    <div class="form-group" ng-class="{'has-error':frm.Balance.$invalid && frm.Balance.$touched}" data-toggle="tooltip" data-placement="bottom" title="Balance">
+                        <div class="input-group">
+                            <input type="text" name="Balance" placeholder="Balance" class="form-control" ng-model="entity.Balance" ng-change="entity.PreviousDue = entity.Balance" maxlength="51" ng-maxlength="50" />
+                            <span class="input-group-addon">
+                                <i class="fa fa-money font-red"></i>
+                            </span>
+                        </div>
+                        <span class="help-block" style="display: block;" ng-if="frm.Balance.$error.required && frm.Balance.$touched">Balance  is required</span>
+                        <span class="help-block" ng-if="frm.Balance.$error.maxlength">50 Character Max</span>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding:5px 15px !important">
+                    <div class="form-group" ng-class="{'has-error':frm.Narration.$invalid && frm.Narration.$touched}" data-toggle="tooltip" data-placement="bottom" title="Narration">
+                        <div class="input-group">
+                            <input type="text" name="Narration" placeholder="Narration" class="form-control" ng-model="entity.Narration" maxlength="51" ng-maxlength="50" required ng-change="entity.PaymentPurpose =entity.Narration" />
+                            <span class="input-group-addon">
+                                <i class="fa fa-money font-red"></i>
+                            </span>
+                        </div>
+                        <span class="help-block" style="display: block;" ng-if="frm.Narration.$error.required && frm.Narration.$touched">Narration  is required</span>
+                        <span class="help-block" ng-if="frm.Narration.$error.maxlength">50 Character Max</span>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding:5px 15px !important">
+                    <div class="form-group" ng-class="{'has-error':frm.ReceiptNo.$invalid && frm.ReceiptNo.$touched}" data-toggle="tooltip" data-placement="bottom" title="Money Receipt">
+                        <div class="input-group">
+                            <input type="text" name="ReceiptNo" placeholder="Receipt No#" class="form-control" ng-model="entity.ReceiptNo" maxlength="51" ng-maxlength="50" required />
+                            <span class="input-group-addon">
+                                <i class="fa fa-money font-red"></i>
+                            </span>
+                        </div>
+                        <span class="help-block" style="display: block;" ng-if="frm.ReceiptNo.$error.required && frm.ReceiptNo.$touched">Money Receipt  is required</span>
+                        <span class="help-block" ng-if="frm.ReceiptNo.$error.maxlength">50 Character Max</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3" style="padding:5px 15px !important">
+                    <div class="form-group" ng-class="{'has-error':frm.Amount.$invalid && frm.Amount.$touched}" data-toggle="tooltip" data-placement="bottom" title="Amount">
+                        <div class="input-group">
+                            <input type="number" name="Amount" placeholder="Amount" class="form-control" ng-model="entity.Amount" maxlength="51" ng-maxlength="50" required />
+                            <span class="input-group-addon">
+                                <i class="fa fa-money font-red"></i>
+                            </span>
+                        </div>
+                        <span class="help-block" style="display: block;" ng-if="frm.Amount.$error.required && frm.Amount.$touched">Amount  is required</span>
+                        <span class="help-block" ng-if="frm.Amount.$error.maxlength">50 Character Max</span>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding: 5px 15px !important" ng-class="{'has-error':frm.PayType.$invalid && frm.PayType.$touched}" data-toggle="tooltip" data-placement="bottom" title=" Pay Type">
+                    <select class="bs-select form-control" name="PayType" style="width: 100%" required ng-model="cmbPayType" ng-options="payType.PayMethodNo for payType in payList track by payType.PayMethodId " ng-change="entity.PayMethodId=cmbPayType.PayMethodId;entity.PayMethodNo=cmbPayType.PayMethodNo">
+                        <option value="">-- Pay Type --</option>
+                    </select>
+                    <span class="help-block" style="display:block;" ng-if="frm.PayType.$error.required && frm.PayType.$touched">Pay Type is required</span>
+                </div>
+                <div class="col-md-3" style="padding:5px 15px !important">
+                    <div class="form-group" ng-class="{'has-error':frm.Transaction.$invalid && frm.Transaction.$touched}" data-toggle="tooltip" data-placement="bottom" title="Transaction">
+                        <div class="input-group">
+                            <input type="text" name="Transaction" placeholder="Transaction#" class="form-control" ng-model="entity.Transaction" maxlength="51" ng-maxlength="50" required />
+                            <span class="input-group-addon">
+                                <i class="fa fa-money font-red"></i>
+                            </span>
+                        </div>
+                        <span class="help-block" style="display: block;" ng-if="frm.Transaction.$error.required && frm.Transaction.$touched">Transaction  is required</span>
+                        <span class="help-block" ng-if="frm.Transaction.$error.maxlength">50 Character Max</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3" style="padding:5px 15px !important">
+                    <div class="form-group" ng-class="{ 'has-error' : frm.CollectionDate.$touched && frm.CollectionDate.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Collection Date">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="cDate" placeholder="Collection Date" name="CollectionDate" ng-model="entity.CollectionDate" ng-change="entity.PaymentDate = entity.CollectionDate" maxlength="51" ng-maxlength="50" required>
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar font-red"></i>
+                            </span>
+                        </div>
+                        <span class="help-block" style="display: block;" ng-if="frm.CollectionDate.$error.required && frm.CollectionDate.$touched">Collection Date is required</span>
+                        <span class="help-block" ng-if="frm.CollectionDate.$error.maxlength">50 Character Max</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-show="entity.PayMethodNo ==='Cheque'">
+                <div class="col-md-3" style="padding:5px 15px !important">
+                    <div class="form-group" ng-class="{'has-error':frm.Bank.$invalid && frm.Bank.$touched}" data-toggle="tooltip" data-placement="bottom" title="Bank">
+                        <div class="input-group">
+                            <input type="text" name="Bank" placeholder="Bank" class="form-control" ng-model="entity.Bank" maxlength="51" ng-maxlength="50" />
+                            <span class="input-group-addon">
+                                <i class="fa fa-university font-red"></i>
+                            </span>
+                        </div>
+                        <span class="help-block" style="display: block;" ng-if="frm.Bank.$error.required && frm.Bank.$touched">Bank  is required</span>
+                        <span class="help-block" ng-if="frm.Bank.$error.maxlength">50 Character Max</span>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding:5px 15px !important">
+                    <div class="form-group" ng-class="{'has-error':frm.Branch.$invalid && frm.Branch.$touched}" data-toggle="tooltip" data-placement="bottom" title="Branch">
+                        <div class="input-group">
+                            <input type="text" name="Branch" placeholder="Branch" class="form-control" ng-model="entity.Branch" maxlength="51" ng-maxlength="50" />
+                            <span class="input-group-addon">
+                                <i class="fa fa-university font-red"></i>
+                            </span>
+                        </div>
+                        <span class="help-block" style="display: block;" ng-if="frm.Branch.$error.required && frm.Branch.$touched">Branch  is required</span>
+                        <span class="help-block" ng-if="frm.Branch.$error.maxlength">50 Character Max</span>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding:5px 15px !important">
+                    <div class="form-group" ng-class="{'has-error':frm.ChequeNo.$invalid && frm.ChequeNo.$touched}" data-toggle="tooltip" data-placement="bottom" title="Cheque No">
+                        <div class="input-group">
+                            <input type="text" name="ChequeNo" placeholder="Cheque No#" class="form-control" ng-model="entity.ChequeNo" maxlength="51" ng-maxlength="50" />
+                            <span class="input-group-addon">
+                                <i class="fa fa-money font-red"></i>
+                            </span>
+                        </div>
+                        <span class="help-block" style="display: block;" ng-if="frm.ChequeNo.$error.required && frm.ChequeNo.$touched">Cheque No  is required</span>
+                        <span class="help-block" ng-if="frm.ChequeNo.$error.maxlength">50 Character Max</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3" style="padding:5px 15px !important">
+                    <div class="form-group" ng-class="{ 'has-error' : frm.PaymentChequeDate.$touched && frm.PaymentChequeDate.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Cheque Date">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="chequeDate" placeholder="Cheque Date" name="PaymentChequeDate" ng-model="entity.PaymentChequeDate" maxlength="51" ng-maxlength="50">
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar font-red"></i>
+                            </span>
+                        </div>
+                        <span class="help-block" style="display: block;" ng-if="frm.PaymentChequeDate.$error.required && frm.PaymentChequeDate.$touched">Cheque Date is required</span>
+                        <span class="help-block" ng-if="frm.PaymentChequeDate.$error.maxlength">50 Character Max</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-show="entity.PayMethodNo !='Cheque'">
+                <div class="col-md-2" style="padding:5px 15px !important;float:left">
+                    <input type="button" class="btn btn-lg btn-success box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" value="Save" ng-click="Save()" ng-disabled="!cmbStudent || !entity.Balance || !entity.Narration || !entity.ReceiptNo|| !entity.Amount|| !cmbPayType || !entity.Transaction || !entity.CollectionDate" />
+                </div>
+            </div>
+            <div class="row" ng-show="entity.PayMethodNo ==='Cheque'">
+                <div class="col-md-2" style="padding:5px 15px !important;float:left">
+                    <input type="button" class="btn btn-lg btn-success box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" value="Save" ng-click="Save()" ng-disabled="!cmbStudent || !entity.Balance || !entity.Narration || !entity.ReceiptNo|| !entity.Amount|| !cmbPayType || !entity.Transaction || !entity.CollectionDate || !entity.Bank || !entity.Branch || !entity.ChequeNo || !entity.PaymentChequeDate" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet box purple">
+                        <div class="portlet-title sbold">
+                            <div class="caption no-outline">
+                                <i class="fa fa-money" style="font-size: 20px; color:white"></i>Collection List
+                            </div>
+                        </div>
+                        <div class="portlet-body-grid ">
+                            <div class="row">
+
+                                <div class="col-md-4" style="padding: 5px 15px !important" data-toggle="tooltip" data-placement="bottom" title="Student">
+                                    <select class="bs-select form-control" name="Student_Search" style="width: 100%" required ng-model="cmbStudentSearch" ng-options="student.FullName for student in studentList track by student.StudentId " ng-change="entity.StudentIdSearch=cmbStudentSearch.StudentId">
+                                        <option value="">-- Student --</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" style="padding:5px 15px !important">
+                                    <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="Collection Date">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="fDate" placeholder="From Date" name="FromDate" ng-model="entity.FromDate" maxlength="51" ng-maxlength="50">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-calendar font-red"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3" style="padding:5px 15px !important">
+                                    <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="To Date">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="tDate" placeholder="To Date" name="ToDate" ng-model="entity.ToDate" maxlength="51" ng-maxlength="50">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-calendar font-red"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2" style="padding:5px 15px !important">
+                                    <input type="button" class="form-control text-center btn btn-success" value="Search" ng-click="Search()" ng-disabled="!cmbStudentSearch || !entity.FromDate || !entity.ToDate" />
+                                </div>
+
+                                <div class="form-group" style="padding:5px 15px !important">
+                                    <div class="table-outer">
+                                        <table class="responstable table-hover">
+                                            <tbody>
+                                                <tr class="t-head" style="font-size: 14px !important;">
+                                                    <th class="sbold">Student</th>
+                                                    <th class="sbold text-center" data-th="Details"><span>Collection Type</span></th>
+                                                    <th class="sbold text-center">Amount</th>
+                                                    <th class="sbold text-center">Collection Date</th>
+
+
+                                                </tr>
+                                                <tr dir-paginate="item in entityList | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count" ">
+                                                    <td class="text-center">{{item.FullName}}</td>
+                                                    <td class="text-center">{{item.PayMethodNo}}</td>
+                                                    <td class="text-center">{{item.Amount}}</td>
+                                                    <td class="text-center">{{item.PaymentDate}}</td>
+
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+

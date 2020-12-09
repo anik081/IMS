@@ -1,0 +1,136 @@
+﻿</p>
+<div class="row">
+	<div class="col-md-4">
+		<div class="portlet box purple">
+			<div class="portlet-title sbold">
+				<div class="caption">
+					<label>
+						Program Info
+					</label>
+				</div>
+
+
+			</div>
+			<div class="portlet-body">
+				<form name="frm" novalidate>
+					<div class="row">
+						<div class="form-body">
+							<div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.ProgramCode.$touched && frm.ProgramCode.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Program Code">
+								<input type="text" class="form-control" id="txtFocus" placeholder="Program Code" name="ProgramCode" ng-model="entity.ProgramCode" maxlength="51" ng-maxlength="50" required autofocus />
+								<span class="help-block" style="display: block;" ng-if="frm.ProgramCode.$error.required && frm.ProgramCode.$touched">Program Code is required!</span>
+								<span class="help-block" ng-if="frm.ProgramCode.$error.maxlength">50 Character Max</span>
+							</div>
+							<div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error': frm.ProgramTitle.$touched && frm.ProgramTitle.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Program Title">
+								<input type="text" class="form-control" placeholder="Program Title" name="ProgramTitle" ng-model="entity.ProgramTitle" maxlength="51" ng-maxlength="50" required autofocus />
+								<span class="help-block" style="display: block;" ng-if="frm.ProgramTitle.$error.required && frm.ProgramTitle.$touched">Program Title is required!</span>
+								<span class="help-block" ng-if="frm.ProgramTitle.$error.maxlength">50 Character Max</span>
+							</div>
+							<div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.ProgramHeadId.$invalid && frm.ProgramHeadId.$touched}" data-toggle="tooltip" data-placement="bottom" title="Program Head">
+								<select class="bs-select form-control" name="ProgramHeadId" style="width: 100%" required ng-model="cmbProgramHead" ng-options="programhead.EmployeeName for programhead in employeeList track by programhead.EmployeeId  " ng-change="entity.ProgramHeadId =cmbProgramHead.EmployeeId">
+									<option value="">-- Program Head --</option>
+
+								</select>
+								<span class="help-block" style="display:block;" ng-if="frm.ProgramHeadId.$error.required && frm.ProgramHeadId.$touched">Year is required</span>
+							</div>
+							<div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error': frm.TotalCredit.$touched && frm.TotalCredit.$invalid}" data-toggle="tooltip" data-placement="bottom" title="TotalCredit">
+								<input type="number" class="form-control" placeholder="Total Credit" name="TotalCredit" ng-model="entity.TotalCredit" max="500" required />
+								<span class="help-block" style="display:block;" ng-if="frm.TotalCredit.$error.required && frm.TotalCredit.$touched">Total Credit is required</span>
+
+							</div>
+							<div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error': frm.DurationInMonth.$touched && frm.DurationInMonth.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Duration In Month">
+								<input type="number" class="form-control" placeholder="Duration in month" name="DurationInMonth" ng-model="entity.DurationInMonth" max="500" required />
+								<span class="help-block" style="display:block;" ng-if="frm.DurationInMonth.$error.required && frm.DurationInMonth.$touched">Duration is required</span>
+
+							</div>
+							<div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error': frm.MinCreditPerSemester.$touched && frm.MinCreditPerSemester.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Min Credit Per Semester">
+								<input type="number" class="form-control" placeholder="Min Credit Per Semester" name="MinCreditPerSemester" ng-model="entity.MinCreditPerSemester" max="500" required />
+								<span class="help-block" style="display:block;" ng-if="frm.MinCreditPerSemester.$error.required && frm.MinCreditPerSemester.$touched">Min Credit is required</span>
+
+							</div>
+							<div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error': frm.MaxCreditPerSemester.$touched && frm.MaxCreditPerSemester.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Max Credit Per Semester">
+								<input type="number" class="form-control" placeholder="Max Credit Per Semester" name="MaxCreditPerSemester" ng-model="entity.MaxCreditPerSemester" max="500" required />
+								<span class="help-block" style="display:block;" ng-if="frm.MaxCreditPerSemester.$error.required && frm.MaxCreditPerSemester.$touched">Max Credit required</span>
+
+							</div>
+							<div class="form-group">
+								<div class="input-group">
+									<div class="col-md-3">
+										<label class="sbold" style="margin-top: 10px;">Status:</label>
+									</div>
+									<div class="col-md-9">
+										<div class="mt-radio-inline">
+											<label class="mt-radio">
+												<input type="radio" name="optionsRadios" ng-value="true" ng-model="entity.IsActive"> Active
+												<span></span>
+											</label>
+											<label class="mt-radio">
+												<input type="radio" name="optionsRadios" ng-value="false" ng-model="entity.IsActive"> Inactive
+												<span></span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-actions" style="padding: 5px 15px !important" block-ui="entryBlock">
+								<button type="submit" class="btn btn-lg btn-success box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-disabled="frm.$invalid" ng-click="post('save')">Submit</button>
+								<button type="button" class="btn btn-lg btn-danger box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-show="entity.ProgramId > 0" ng-click="post('delete')">Delete</button>
+								<button type="button" class="btn btn-lg btn-default box-shadow--8dp" style="min-width:90px !important; margin-bottom: 5px" ng-click="resetForm()">Reset</button>
+							</div>
+						</div>
+					</div>
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+	<div class="col-md-8">
+		<div class="portlet box purple">
+			<div class="portlet-title sbold">
+				<div class="caption">
+					<label>
+						Programs
+					</label>
+				</div>
+			</div>
+			<div class="portlet-body">
+				<div class="tbl-outer">
+					<table class="responstable table-hover">
+						<tbody>
+							<tr class="t-head" style="font-size: 14px !important">
+								<th class="sbold">#</th>
+								<th class="sbold text-center" data-th="Details"><span>Program Code</span></th>
+								<th class="sbold text-center">Program Title</th>
+								<th class="sbold text-center">Program Head</th>
+								<th class="sbold text-center">Duration In Month</th>
+								<th class="sbold text-center">Min Credit</th>
+								<th class="sbold text-center">Max Credit</th>
+								<th class="sbold text-center">Total Credit</th>
+								<th class="sbold text-center" data-th="Details"><span>Status</span></th>
+							</tr>
+							
+								<!-- table data-->
+							<tr dir-paginate="item in entityList | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count" ng-click="rowClick(item)" ng-class="{ 'rowSelected' : entity.ProgramId === item.ProgramId}">
+								<td class="text-center">{{$index + ((currentPage-1)*PerPage) + 1}}</td>
+								<td class="text-center"> {{item.ProgramCode}} </td>
+								<td class="text-center"> {{item.ProgramTitle}} </td>
+                                <td class="text-center"> {{item.ProgramHeadId}} </td>
+								<td class="text-center"> {{item.DurationInMonth}} </td>
+								<td class="text-center"> {{item.MinCreditPerSemester}} </td>
+								<td class="text-center"> {{item.MaxCreditPerSemester}} </td>
+								<td class="text-center"> {{item.TotalCredit}} </td>
+								<td class="text-center"> {{item.IsActive ? 'Active' : 'Inactive' }} </td>
+							</tr>
+							
+						</tbody>
+
+					</table>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

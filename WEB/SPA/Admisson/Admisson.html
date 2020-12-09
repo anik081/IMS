@@ -1,0 +1,457 @@
+﻿</p>
+<div class="row">
+    <div class="col-md-12">
+        <form name="frm">
+            <div class="portlet box purple">
+                <div class="portlet-title sbold">
+                    <div class="caption no-outline">
+                        <i class="fa fa-user" style="font-size: 20px; color:white"></i>Student Admission
+                    </div>
+                </div>
+                <div class="portlet-body-grid">
+                    <div class="tabbable-line">
+                        <ul class="nav nav-tabs ">
+                            <li class="active">
+                                <a data-target="#tab_1_1" data-toggle="tab" class="uppercase sbold"> Personal</a>
+                            </li>
+                            <li>
+                                <a data-target="#tab_1_2" data-toggle="tab" class="uppercase sbold"> Educational</a>
+                            </li>
+                            <li>
+                                <a data-target="#tab_1_3" data-toggle="tab" class="uppercase sbold"> Program</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <p />
+                            <div class="tab-pane active" id="tab_1_1">
+
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.StudentName.$touched && frm.StudentName.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Student Name">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="txtFocus" placeholder="Name" name="StudentName" ng-model="entity.FullName" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-user font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.StudentName.$error.required && frm.StudentName.$touched">Student Name is required</span>
+                                                <span class="help-block" ng-if="frm.StudentName.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.MobileNo.$touched && frm.MobileNo.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Mobile No">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Mobile No" name="MobileNo" ng-model="entity.MobileNo" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-mobile-phone font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.MobileNo.$error.required && frm.MobileNo.$touched">Mobile No is required</span>
+                                                <span class="help-block" ng-if="frm.MobileNo.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.Email.$touched && frm.Email.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Email">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Email" name="Email" ng-model="entity.Email" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-envelope font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.Email.$error.required && frm.Email.$touched">Email is required</span>
+                                                <span class="help-block" ng-if="frm.Email.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.FathersName.$touched && frm.FathersName.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Father's Name">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Father's Name" name="FathersName" ng-model="entity.FatherName" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-user font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.FathersName.$error.required && frm.FathersName.$touched">Father's Name is required</span>
+                                                <span class="help-block" ng-if="frm.FathersName.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.FathersOccupation.$touched && frm.FathersOccupation.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Father's Occupation">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Father's Occupation" name="FathersOccupation" ng-model="entity.FatherOccupation" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-industry font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.FathersOccupation.$error.required && frm.FathersOccupation.$touched">Father's Occupation is required</span>
+                                                <span class="help-block" ng-if="frm.FathersOccupation.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.MothersName.$touched && frm.MothersName.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Mother's Name">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Mother's Name" name="MothersName" ng-model="entity.MotherName" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-user font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.MothersName.$error.required && frm.MothersName.$touched">Mother's Name is required</span>
+                                                <span class="help-block" ng-if="frm.MothersName.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.MothersOccupation.$touched && frm.MothersOccupation.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Mother's Occupation">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Mother's Occupation" name="MothersOccupation" ng-model="entity.MotherOccupation" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-industry font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.MothersOccupation.$error.required && frm.MothersOccupation.$touched">Mother's Occupation is required</span>
+                                                <span class="help-block" ng-if="frm.MothersName.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.GuardiansName.$touched && frm.GuardiansName.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Guardian's Name">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Guardian's Name" name="GuardiansName" ng-model="entity.GuardianName" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-user font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.GuardiansName.$error.required && frm.GuardiansName.$touched">Guardian's Name is required</span>
+                                                <span class="help-block" ng-if="frm.GuardiansName.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.RelationWithGuardian.$touched && frm.RelationWithGuardian.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Relation With Guardian">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Relation With Guardian" name="RelationWithGuardian" ng-model="entity.RelationWithGuardian" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-link font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.RelationWithGuardian.$error.required && frm.RelationWithGuardian.$touched">Relation With Guardian is required</span>
+                                                <span class="help-block" ng-if="frm.RelationWithGuardian.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.GuradianMobile.$touched && frm.GuradianMobile.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Guradian's Mobile">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Guradian's Mobile" name="GuradianMobile" ng-model="entity.GuardianMobileNo" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-mobile-phone font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.GuradianMobile.$error.required && frm.GuradianMobile.$touched">Guradian's Mobile is required</span>
+                                                <span class="help-block" ng-if="frm.GuradianMobile.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.GuradianEmail.$touched && frm.GuradianEmail.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Guradian's Email">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Guradian's Email" name="GuradianEmail" ng-model="entity.GuardianEmail" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-envelope font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.GuradianEmail.$error.required && frm.GuradianEmail.$touched">Guradian's Email is required</span>
+                                                <span class="help-block" ng-if="frm.GuradianEmail.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4" ng-class="{'has-error':frm.PhotoIdType.$invalid && frm.PhotoIdType.$touched}" data-toggle="tooltip" data-placement="bottom" title="Photo Id Type">
+                                            <select class="bs-select form-control" name="PhotoIdType" style="width: 100%" required ng-model="cmbPhotoIdType" ng-options="photoIdType.PhotoIdType for photoIdType in photoIdTypeList track by photoIdType.PhotoId " ng-change="entity.PhotoIdType=cmbPhotoIdType.PhotoIdType">
+                                                <option value="">-- Photo Id Type--</option>
+                                            </select>
+                                            <span class="help-block" style="display:block;" ng-if="frm.PhotoIdType.$error.required && frm.PhotoIdType.$touched">Photo Id Type is required</span>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.PhotoIdNo.$touched && frm.PhotoIdNo.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Photo Id No">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Photo Id No" name="PhotoIdNo" ng-model="entity.PhotoIdNo" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-user font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.PhotoIdNo.$error.required && frm.PhotoIdNo.$touched">Photo Id No is required</span>
+                                                <span class="help-block" ng-if="frm.PhotoIdNo.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.DateOfBirth.$touched && frm.DateOfBirth.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Date Of Birth">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="dobirth" placeholder="Date Of Birth" name="DateOfBirth" ng-model="entity.DateOfBirth" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.DateOfBirth.$error.required && frm.DateOfBirth.$touched">Date Of Birth is required</span>
+                                                <span class="help-block" ng-if="frm.DateOfBirth.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.PlaceOfBirth.$touched && frm.PlaceOfBirth.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Place Of Birth">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Place Of Birth" name="PlaceOfBirth" ng-model="entity.PlaceofBirth" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-map-marker font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.PlaceOfBirth.$error.required && frm.PlaceOfBirth.$touched">Place Of Birth is required</span>
+                                                <span class="help-block" ng-if="frm.PlaceOfBirth.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.BloodGroup.$touched && frm.BloodGroup.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Blood Group">
+                                                <select class="bs-select form-control" style="width: 100%" name="BloodGroup" required ng-model="cmbBloodGroup" ng-options="bloodGroup.BloodGroupType for bloodGroup in bloodGroupList track by bloodGroup.BloodGroupId " ng-change="entity.BloodGroup=cmbBloodGroup.BloodGroupType">
+                                                    <option value="">Blood Group</option>
+                                                </select>
+                                                <span class="help-block" style="display: block;" ng-if="frm.BloodGroup.$error.required && frm.BloodGroup.$touched">Blood Group is required</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.Gender.$touched && frm.Gender.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Gender">
+                                                <select class=" bs-select form-control" name="Gender" required ng-model="cmbGender" ng-options="gender.GenderType for gender in genderList track by gender.GenderId " ng-change="entity.Gender=cmbGender.GenderType">
+                                                    <option value="">Gender</option>
+                                                </select>
+                                                <span class="help-block" style="display: block;" ng-if="frm.Gender.$error.required && frm.Gender.$touched">Gender is required</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.MaritalStatus.$touched && frm.MaritalStatus.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Marital Status">
+                                                <select class="bs-select form-control" name="MaritalStatus" required ng-model="cmbMaritalStatus" ng-options="maritalStatus.MaritalStatusType for maritalStatus in maritalStatusList track by maritalStatus.MaritalStatusId " ng-change="entity.MaritalStatus=cmbMaritalStatus.MaritalStatusType">
+                                                    <option value="">Marital Status</option>
+                                                </select>
+                                                <span class="help-block" style="display: block;" ng-if="frm.MaritalStatus.$error.required && frm.MaritalStatus.$touched">Marital Status is required</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.HoldingNo.$touched && frm.HoldingNo.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Holding No.">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Holding No # ,Road No./Name" name="HoldingNo" ng-model="entity.HoldingNoAndRoad" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-map-marker font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.HoldingNo.$error.required && frm.HoldingNo.$touched">Holding No. is required</span>
+                                                <span class="help-block" ng-if="frm.HoldingNo.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.PoliceStation.$touched && frm.PoliceStation.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Police Station">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Police Station" name="PoliceStation" ng-model="entity.PoliceStation" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-map-marker font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.PoliceStation.$error.required && frm.PoliceStation.$touched">Police Station is required</span>
+                                                <span class="help-block" ng-if="frm.PoliceStation.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.PostOffice.$touched && frm.PostOffice.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Post Office">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Post Office" name="PostOffice" ng-model="entity.PostOffice" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-map-marker font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.PostOffice.$error.required && frm.PostOffice.$touched">Post Office is required</span>
+                                                <span class="help-block" ng-if="frm.PostOffice.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.Upazila.$touched && frm.Upazila.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Upazila">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Upazila" name="Upazila" ng-model="entity.Upazila" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-map-marker font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.Upazila.$error.required && frm.Upazila.$touched">Upazila is required</span>
+                                                <span class="help-block" ng-if="frm.Upazila.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.District.$touched && frm.District.$invalid }" data-toggle="tooltip" data-placement="bottom" title="District">
+                                                <select class="bs-select form-control" name="District" required ng-model="cmbDistrict" ng-options="district.DistrictName for district in districtList track by district.DistrictId " ng-change="entity.District=cmbDistrict.DistrictName">
+                                                    <option value="">District</option>
+                                                </select>
+                                                <span class="help-block" style="display: block;" ng-if="frm.District.$error.required && frm.District.$touched">District is required</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.Division.$touched && frm.Division.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Division">
+                                                <select class="bs-select form-control" name="Division" required ng-model="cmbDivision" ng-options="division.DivisionName for division in divisionList track by division.DivisionId " ng-change="entity.Division=cmbDivision.DivisionName">
+                                                    <option value="">Division</option>
+                                                </select>
+                                                <span class="help-block" style="display: block;" ng-if="frm.Division.$error.required && frm.Division.$touched">Division is required</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="tab-pane" id="tab_1_2">
+
+                                <div class="row">
+                                    <div class="col-md-3" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Exam.$invalid && frm.Exam.$touched}" data-toggle="tooltip" data-placement="bottom" title="Exam">
+                                        <select class="bs-select form-control" name="Exam" style="width: 100%" required ng-model="cmbExam" ng-options="exam.ExamName for exam in examList track by exam.ExamId " ng-change="entityEducation.ExamType=cmbExam.ExamName">
+                                            <option value="">-- Exam --</option>
+                                        </select>
+                                        <span class="help-block" style="display:block;" ng-if="frm.Exam.$error.required && frm.Exam.$touched">Exam is required</span>
+                                    </div>
+                                    <div class="col-md-3" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Board.$invalid && frm.Board.$touched}" data-toggle="tooltip" data-placement="bottom" title="Board">
+                                        <select class="bs-select form-control" name="Board" style="width: 100%" required ng-model="cmbBoard" ng-options="board.BoardName for board in boardList track by board.BoardId " ng-change="entityEducation.BoardName=cmbBoard.BoardName">
+                                            <option value="">-- Board --</option>
+                                        </select>
+                                        <span class="help-block" style="display:block;" ng-if="frm.Board.$error.required && frm.Board.$touched">Board is required</span>
+                                    </div>
+                                    <div class="col-md-3" style="padding: 5px 15px !important" ng-class="{'has-error':frm.PassingYear.$invalid && frm.PassingYear.$touched}" data-toggle="tooltip" data-placement="bottom" title="Passing Year">
+                                        <select class="bs-select form-control" name="PassingYear" style="width: 100%" required ng-model="cmbPassingYear" ng-options="passingyear.YearId for passingyear in yearList track by passingyear.YearId " ng-change="entityEducation.PassingYear=cmbPassingYear.YearId">
+                                            <option value="">-- Passing Year --</option>
+                                        </select>
+                                        <span class="help-block" style="display:block;" ng-if="frm.PassingYear.$error.required && frm.PassingYear.$touched">Passing Year is required</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group" style="padding: 5px 0px !important" ng-class="{ 'has-error' : frm.Gpa.$touched && frm.Gpa.$invalid }" data-toggle="tooltip" data-placement="bottom" title="GPA/Class">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="GPA/Class" name="Gpa" ng-model="entityEducation.GpaOrClass" maxlength="51" ng-maxlength="50" required>
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-user font-red"></i>
+                                                </span>
+                                            </div>
+                                            <span class="help-block" style="display: block;" ng-if="frm.Gpa.$error.required && frm.Gpa.$touched">GPA is required</span>
+                                            <span class="help-block" ng-if="frm.Gpa.$error.maxlength">50 Character Max</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group" ng-class="{ 'has-error' : frm.InstituteName.$touched && frm.InstituteName.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Institute Name">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Institute Name" name="InstituteName" ng-model="entityEducation.InstituteName" maxlength="51" ng-maxlength="50" required>
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-university font-red"></i>
+                                                </span>
+                                            </div>
+                                            <span class="help-block" style="display: block;" ng-if="frm.InstituteName.$error.required && frm.InstituteName.$touched">Institute Name is required</span>
+                                            <span class="help-block" ng-if="frm.InstituteName.$error.maxlength">50 Character Max</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group" ng-class="{ 'has-error' : frm.Address.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Address">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Address" name="Address" ng-model="entityEducation.InstituteAddress" maxlength="51" ng-maxlength="50">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-map-marker font-red"></i>
+                                                </span>
+                                            </div>
+                                            <span class="help-block" ng-if="frm.Address.$error.maxlength">50 Character Max</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+
+                                        <button type="button" class="form-control text-center btn purple box-shadow--8dp" ng-click="addEducation()">ADD</button><!--LockSaOrReview()-->
+
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group" style="padding: 5px 15px !important" ;">
+                                            <div class="table-outer">
+                                                <table class="responstable table-hover">
+                                                    <tbody>
+                                                        <tr class="t-head" style="font-size: 14px !important;">
+                                                            <th class="sbold">Exam</th>
+                                                            <th class="sbold text-center" data-th="Details"><span>Board</span></th>
+                                                            <th class="sbold text-center">Passing Year</th>
+
+                                                            <th class="sbold text-center">GPA</th>
+                                                            <th class="sbold text-center">Institute</th>
+                                                            <th class="sbold text-center">Institute Address</th>
+                                                            <th class="sbold text-center" width="5%">Action</th>
+                                                        </tr>
+                                                        <tr class="hoverHand searchRow" ng-repeat="education in educationList">
+                                                            <td style="text-align:center">{{education.ExamType}}</td>
+                                                            <td style="text-align:center">{{education.BoardName}}</td>
+                                                            <td style="text-align:center"> {{education.PassingYear}}</td>
+                                                            <td style="text-align:center">{{education.GpaOrClass}}</td>
+                                                            <td style="text-align:center">{{education.InstituteName}}</td>
+                                                            <td style="text-align:center">{{education.InstituteAddress}}</td>
+                                                            <td>
+                                                                <div class="form-actions">
+                                                                    <button type="button" class="btn btn-sm purple" ng-click="removeEducation($index)">Remove</button><!--LockSaOrReview()-->
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane" id="tab_1_3">
+
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-md-3" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Batch.$invalid && frm.Batch.$touched}" data-toggle="tooltip" data-placement="bottom" title="Batch">
+                                            <select class="bs-select form-control" name="Batch" style="width: 100%" required ng-model="cmbBatch" ng-options="batch.BatchName for batch in batchList track by batch.BatchId " ng-change="entity.BatchNo=cmbBatch.BatchId">
+                                                <option value="">-- Batch --</option>
+                                            </select>
+                                            <span class="help-block" style="display:block;" ng-if="frm.Batch.$error.required && frm.Batch.$touched">Batch is required</span>
+                                        </div>
+                                        <div class="col-md-4" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Program.$invalid && frm.Program.$touched}" data-toggle="tooltip" data-placement="bottom" title="Program">
+                                            <select class="bs-select form-control" name="Program" style="width: 100%" required ng-model="cmbProgram" ng-options="program.ProgramTitle for program in programList track by program.ProgramId " ng-change="entity.ProgramId=cmbProgram.ProgramId">
+                                                <option value="">-- Program --</option>
+                                            </select>
+                                            <span class="help-block" style="display:block;" ng-if="frm.Program.$error.required && frm.Program.$touched">Program is required</span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<div class="form-actions noborder pull-right" style="margin-right: 7px; margin-top: 10px" ng-show="!SaOrReview.FlagSelfAppraisal" block-ui="rvwSaveBlock">
+    <button type="button" class="btn btn-lg purple box-shadow--8dp" ng-disabled="frm.$invalid" ng-click="post('save')">Lock & Submit</button><!--LockSaOrReview()-->
+</div>
