@@ -13,11 +13,11 @@
     dateToday = new Date();
     var year = dateToday.getFullYear();
     getProgramTypeActive();
-    yearLimit = 20;
+    yearLimit = 40;
     $scope.yearList = [];
     for (i = 0; i <= yearLimit; i++) {
         $scope.yearList.push({ "YearId": year - i });
-        
+
     }
     function clear() {
         $scope.entity = { StudentId: 0 };
@@ -67,7 +67,7 @@
     };
 
     function submitRequest(trnType) {
-        var params = JSON.stringify({ obj: $scope.entity, transactionType: trnType, educationList: $scope.educationList});
+        var params = JSON.stringify({ obj: $scope.entity, transactionType: trnType, educationList: $scope.educationList });
 
         $http.post('/Admission/Post', params).success(function (data) {
             $scope.entryBlock.start();
@@ -576,7 +576,7 @@
         "BatchId": "3",
         "BatchName": "Fall"
 
-        }]
+    }]
     function getProgramTypeActive() {
         var where = "IsActive = 1";
         $http({
@@ -599,17 +599,45 @@
     //    "ProgramId": "3",
     //    "ProgramName": "English"
     //}]
-    $scope.boardList = [{
-        "BoardId": "1",
-        "BoardName": "Dhaka"
-    }, {
-        "BoardId": "2",
-        "BoardName": "Rajshahi"
-    }, {
-        "BoardId": "3",
-        "BoardName": "Comilla"
+    $scope.boardList = [
 
-    }]
+        {
+            "BoardId": "1",
+            "BoardName": "Barisal"
+        }, {
+            "BoardId": "2",
+            "BoardName": "Chittagong"
+        },
+        {
+            "BoardId": "3",
+            "BoardName": "Dhaka"
+        }, {
+            "BoardId": "4",
+            "BoardName": "Khulna"
+        },
+        {
+            "BoardId": "5",
+            "BoardName": "Mymensingh"
+        },
+        {
+            "BoardId": "6",
+            "BoardName": "Rajshahi"
+        },
+        {
+            "BoardId": "7",
+            "BoardName": "Sylhet"
+
+        },
+        {
+            "BoardId": "8",
+            "BoardName": "Rangpur"
+
+        },
+        {
+            "BoardId": "8",
+            "BoardName": "Dinajpur"
+        }
+    ]
     //$scope.yearList = [{
     //    "YearId": "1",
     //    "YearName": "2020"
@@ -647,7 +675,7 @@
         $scope.educationList.push(obj);
     }
     $scope.removeEducation = function (element) {
-        $scope.educationLis = $scope.educationList.splice(element,1);
+        $scope.educationLis = $scope.educationList.splice(element, 1);
     }
 
 });
