@@ -314,8 +314,22 @@
                                                 <span class="help-block" style="display: block;" ng-if="frm.Division.$error.required && frm.Division.$touched">Division is required</span>
                                             </div>
                                         </div>
-                                    </div>
 
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.IdCard.$touched && frm.IdCard.$invalid }" data-toggle="tooltip" data-placement="bottom" title="IdCard">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Id Card" name="IdCard" ng-model="entity.IdCard" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-file-image-o font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.IdCard.$error.required && frm.IdCard.$touched">IdCard is required</span>
+                                                <span class="help-block" ng-if="frm.IdCard.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 

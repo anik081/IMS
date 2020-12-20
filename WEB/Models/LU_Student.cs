@@ -37,5 +37,7 @@ namespace QtImsEntity
 		public string Division { get; set; }
 		public Int32 UpdateBy { get; set; }
 		public DateTime UpdateDate { get; set; }
+		public string IdCard { get; set; }
+		public string ImgaeLocation { get; set; }
 	}
 }

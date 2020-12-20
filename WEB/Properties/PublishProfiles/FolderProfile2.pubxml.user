@@ -1,0 +1,776 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\QuadTheory\IMS_Version_2.0.0\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.TelemetryCorrelation.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>12/13/2020 15:42:57</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.AccessControl.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.AccessControl.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Claims.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Encoding.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Primitives.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Principal.Windows.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.ValueTuple.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.ReaderWriter.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XmlDocument.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.XDocument.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>12/13/2020 15:42:57</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>12/13/2020 15:42:56</publishTime>
+    </File>
+    <File Include="bin/WEB.dll">
+      <publishTime>12/13/2020 15:52:02</publishTime>
+    </File>
+    <File Include="bin/WEB.pdb">
+      <publishTime>12/13/2020 15:52:02</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>12/13/2020 15:42:57</publishTime>
+    </File>
+    <File Include="Content/alertify.core.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/alertify.default.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/angular-block-ui.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/angular-block-ui.css.map">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/angular-block-ui.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap-datepicker.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap-datetimepicker.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap-modal-bs3patch.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap-modal.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap-switch.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css.map">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap-timepicker.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/components.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/custom.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/customDirPagination.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/darkblue.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/datatables.bootstrap.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/datatables.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/daterangepicker.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/font-awesome.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/fonts/Simple-Line-Icons.dev.svg">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/fonts/Simple-Line-Icons.eot">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/fonts/Simple-Line-Icons.svg">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/fonts/Simple-Line-Icons.ttf">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/fonts/Simple-Line-Icons.woff">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/fullcalendar.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/img/avatar.png">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/img/loading.gif">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/img/LoginPageLogo.png">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/img/mgt.png">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/img/TopBarLogo.png">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/jk-rating-stars.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/jqvmap.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/layout.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/login.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/morris.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/plugins.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/select2.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/simple-line-icons.min.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.eot">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.svg">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.ttf">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff2">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome.otf">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="img/loading.gif">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="img/portlet-collapse-icon-white.png">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="img/portlet-expand-icon-white.png">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="img/remove-icon-small.png">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/alertify.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/amcharts/amcharts.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/amcharts/amstock.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/amcharts/pie.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/amcharts/radar.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/amcharts/serial.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/amcharts/themes/chalk.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/amcharts/themes/light.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/amcharts/themes/patterns.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/ammap/ammap.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/ammap/worldLow.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/angular-animate.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/angular-block-ui.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/angular-block-ui.js.map">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/angular-block-ui.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/angular-block-ui.min.js.map">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/angular-cookies.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/angular-route.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/angular.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/app.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-datepicker.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-datetimepicker.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-modal.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-modalmanager.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-switch.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-timepicker.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/dashboard.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/datatables.bootstrap.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/datatables.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/daterangepicker.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/demo.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/dirPagination.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/fullcalendar.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/horizontal-timeline.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jk-rating-stars.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jk-rating-stars.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.min.map">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.slim.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.slim.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.slim.min.map">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.blockUI.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.blockui.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.counterup.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.easypiechart.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.flot.categories.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.flot.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.flot.resize.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.slimscroll.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.sparkline.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.waypoints.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jqvmap/jquery.vmap.europe.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jqvmap/jquery.vmap.germany.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jqvmap/jquery.vmap.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jqvmap/jquery.vmap.russia.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jqvmap/jquery.vmap.sampledata.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jqvmap/jquery.vmap.usa.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/jqvmap/jquery.vmap.world.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/js.cookie.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/layout.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/linq.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.8.3.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/moment.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/morris.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/quick-nav.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/quick-sidebar.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/raphael-min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/select2.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/table-datatables-scroller.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Scripts/ui-bootstrap-tpls-1.3.3.min.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/AdditionalFees/AdditionalFees.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/AdditionalFees/AdditionalFeesCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Admisson/Admisson.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Admisson/AdmissonCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/app.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Attendance/Attendance.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Attendance/AttendanceCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Billing/Billing.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Billing/BillingCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Course/Course.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Course/CourseCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/CourseOffer/CourseOffer.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/CourseOffer/CourseOfferCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/CustomerProfile/CustomerProfile.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/CustomerProfile/CustomerProfileCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/DueList/DueList.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/DueList/DueListCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/EmployeeEntry/EmployeeEntry.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/EmployeeEntry/EmployeeEntryCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/ExamResult/ExamResult.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/ExamResult/ExamResultCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/FeesCollection/FeesCollection.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/FeesCollection/FeesCollectionCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/FeesEntry/FeesEntry.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/FeesEntry/FeesEntryCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/FeesType/FeesType.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/FeesType/FeesTypeCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Home/Home.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Home/HomeController.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/LoginController.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/MarkType/MarkType.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/MarkType/MarkTypeCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Package/Package.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Package/PackageCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/PaymentMethod/PaymentMethod.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/PaymentMethod/PaymentMethodCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Program/Program.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Program/ProgramCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Registration/Registration.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Registration/RegistrationCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Semester/Semester.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/Semester/SemesterCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/SideBarController.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/TopBarController.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/User/User.html">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="SPA/User/UserCtrl.js">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Views/Home/Login.cshtml">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>12/13/2020 15:42:55</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/13/2020 15:52:02</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

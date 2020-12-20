@@ -1,0 +1,217 @@
+﻿</p>
+<div class="row">
+    <div class="col-md-4">
+        <div class="portlet box purple">
+            <div class="portlet-title sbold">
+                <div class="caption">
+                    <label>
+                        Course Info
+                    </label>
+                </div>
+
+
+            </div>
+            <div class="portlet-body">
+                <form name="frm" novalidate>
+                    <div class="row">
+                        <div class="form-body">
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.CourseCode.$touched && frm.CourseCode.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Course Code">
+                                <input type="text" id="txtFocus" class="form-control" placeholder="Course Code" name="CourseCode" ng-model="entity.CourseCode" maxlength="51" ng-maxlength="50" required autofocus />
+                                <span class="help-block" style="display: block;" ng-if="frm.CourseCode.$error.required && frm.CourseCode.$touched">Course Code is required!</span>
+                                <span class="help-block" ng-if="frm.CourseCode.$error.maxlength">50 Character Max</span>
+                            </div>
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.CourseTitle.$touched && frm.CourseTitle.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Course Title">
+                                <input type="text" class="form-control" placeholder="Course Title" name="CourseTitle" ng-model="entity.CourseTitle" maxlength="51" ng-maxlength="50" required />
+                                <span class="help-block" style="display: block;" ng-if="frm.CourseTitle.$error.required && frm.CourseTitle.$touched">Course Title is required!</span>
+                                <span class="help-block" ng-if="frm.CourseTitle.$error.maxlength">50 Character Max</span>
+                            </div>
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.ProgramNames.$touched && frm.ProgramNames.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Program">
+                                <input type="text" class="form-control" placeholder="Program" name="Program" ng-model="entity.ProgramNames" maxlength="51" ng-maxlength="50" required readonly data-toggle="modal" data-target="#programModal" />
+                                <span class="help-block" style="display: block;" ng-if="frm.ProgramNames.$error.required && frm.ProgramNames.$touched">Program is required!</span>
+                                <span class="help-block" ng-if="frm.ProgramNames.$error.maxlength">50 Character Max</span>
+                            </div>
+							  <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.PrerequisitNames.$touched && frm.PrerequisitNames.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Prerequisite">
+                                <input type="text" class="form-control" placeholder="Prerequisit" name="Prerequisite" ng-model="entity.PrerequisitNames" maxlength="51" ng-maxlength="50" required readonly data-toggle="modal" data-target="#prerequisiteModal"/>
+								<span class="help-block" style="display: block;" ng-if="frm.PrerequisitNames.$error.required && frm.PrerequisitNames.$touched">Prerequisit is required!</span>
+                                <span class="help-block" ng-if="frm.PrerequisitNames.$error.maxlength">50 Character Max</span>
+                            </div>
+                            <!--<div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Program.$invalid && frm.Program.$touched}" data-toggle="tooltip" data-placement="bottom" title="Program">
+                                <select class="bs-select form-control" name="Program" style="width: 100%" required ng-model="entity.Program">
+                                    <option value="">-- Program --</option>
+                                </select>
+                                <span class="help-block" style="display:block;" ng-if="frm.Program.$error.required && frm.Program.$touched">Program is required</span>
+                            </div>-->
+                            <!--<div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Prerequisite.$invalid && frm.Prerequisite.$touched}" data-toggle="tooltip" data-placement="bottom" title="Prerequisite">
+                                <select class="bs-select form-control" name="Prerequisite" style="width: 100%" required ng-model="entity.Prerequisite">
+                                    <option value="">-- Prerequisite --</option>
+                                </select>
+                                <span class="help-block" style="display:block;" ng-if="frm.Prerequisite.$error.required && frm.Prerequisite.$touched">Prerequisite is required</span>
+                            </div>-->
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.CourseInstructor.$touched && frm.CourseInstructor.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Course Instructor">
+                                <select class="form-control" name="CourseInstructor" ng-model="cmbInstructor" ng-options="instructor.EmployeeName for instructor in employeeList track by instructor.EmployeeId  " ng-change="aInsructor.InstructorId =cmbInstructor.EmployeeId"required >
+									<option value="">-- Select Instructor --</option>
+								</select>
+                                <span class="help-block" style="display: block;" ng-if="frm.CourseInstructor.$error.required && frm.CourseInstructor.$touched">Course Instructor is required!</span>
+                            </div>
+                            <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Credit.$touched && frm.Credit.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Credit">
+                                <input type="number" class="form-control" placeholder="Credit" name="Credit" ng-model="entity.Credits" maxlength="51" ng-maxlength="50" required />
+                                <span class="help-block" style="display: block;" ng-if="frm.Credit.$error.required && frm.Credit.$touched">Credit is required!</span>
+                                <span class="help-block" ng-if="frm.Credit.$error.maxlength">50 Character Max</span>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="col-md-3">
+                                        <label class="sbold" style="margin-top: 10px;">Status:</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="mt-radio-inline">
+                                            <label class="mt-radio">
+                                                <input type="radio" name="optionsRadios" ng-value="true" ng-model="entity.IsActive"> Active
+                                                <span></span>
+                                            </label>
+                                            <label class="mt-radio">
+                                                <input type="radio" name="optionsRadios" ng-value="false" ng-model="entity.IsActive"> Inactive
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions" style="padding: 5px 15px !important" block-ui="entryBlock">
+                                <button type="submit" class="btn btn-lg btn-success box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-disabled="!entity.CourseCode || !entity.CourseTitle || !entity.ProgramNames || !cmbInstructor || !entity.Credits" ng-click="post('save')">Submit</button>
+                                <button type="button" class="btn btn-lg btn-danger box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-show="entity.CourseId > 0" ng-click="post('delete')">Delete</button>
+                                <button type="button" class="btn btn-lg btn-default box-shadow--8dp" style="min-width:90px !important; margin-bottom: 5px" ng-click="resetForm()">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="col-md-8">
+        <div class="portlet box purple">
+            <div class="portlet-title sbold">
+                <div class="caption">
+                    <label>
+                        Courses
+                    </label>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="tbl-outer">
+                    <table class="responstable table-hover">
+                        <tbody>
+                            <tr class="t-head" style="font-size: 14px !important">
+                                <th class="sbold">#</th>
+                                <th class="sbold text-center" data-th="Details"><span>Course Code</span></th>
+                                <th class="sbold text-center">Course Title</th>
+                                <th class="sbold text-center" width="20%">Program</th>
+                                <th class="sbold text-center">Prerequisite</th>
+                                <th class="sbold text-center">Credit</th>
+                                <th class="sbold text-center" data-th="Details"><span>Status</span></th>
+                            </tr>
+                            <tr dir-paginate="item in entityList | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count" ng-click="rowClick(item)" ng-class="{ 'rowSelected' : entity.CourseId === item.CourseId}">
+                                <td class="text-center">{{$index + ((currentPage-1)*PerPage) + 1}}</td>
+                                <td class="text-center"> {{item.CourseCode}} </td>
+                                <td class="text-center"> {{item.CourseTitle}} </td>
+                                <td class="text-center"> {{item.courseProgStr}} </td>
+                                <td class="text-center"> {{item.coursePrereqStr}} </td>
+                                <td class="text-center"> {{item.Credits}} </td>
+                                <td class="text-center"> {{item.IsActive ? 'Active' : 'Inactive' }} </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal fade" id="programModal" tabindex="-1" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="getPrograms()"></button>
+                <h4 class="modal-title sbold">Program List</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="margin-bottom: -25px;">
+                    <div class="col-md-12">
+                        <table class="table table-striped table-bordered table-advance table-hover" style="margin-bottom: 25px!important;">
+                            <thead>
+                                <tr>
+                                    <th class="sbold text-center middle" width="1%">#</th>
+                                    <th class="sbold text-center">Select</th>
+                                    <th class="sbold text-center middle">Code</th>
+                                    <th class="sbold text-center middle">Program Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="hoverHand searchRow" ng-repeat="program in programList" ng-class="{ 'rowSelected' : program.IsSelected}">
+                                    <td class="text-center middle"> {{$index+1}} </td>
+                                    <td class="text-center">
+                                        <md-checkbox aria-label="checkbox" ng-model="program.IsSelected" class="mt-checkbox-grid md-primary" />
+                                    </td>
+                                    <td class="sbold text-center middle"> {{program.ProgramCode}} </td>
+                                    <td class="sbold middle"> {{program.ProgramTitle}} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-outline dark" ng-click="getPrograms()">Close</button>
+                <!--<button type="button" class="btn green" ng-click="UpdateEmployee()">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="prerequisiteModal" tabindex="-1" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="getPrerecuisite()"></button>
+				<h4 class="modal-title sbold">Prerequisite List</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row" style="margin-bottom: -25px;">
+					<div class="col-md-12">
+						<table class="table table-striped table-bordered table-advance table-hover" style="margin-bottom: 25px!important;">
+							<thead>
+								<tr>
+									<th class="sbold text-center middle" width="1%">#</th>
+									<th class="sbold text-center">Select</th>
+									<th class="sbold text-center middle">Code</th>
+									<th class="sbold text-center middle">Course Name</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="hoverHand searchRow" ng-repeat="prerequisite in prerequisiteList" ng-class="{ 'rowSelected' : prerequisite.IsSelected}">
+									<td class="text-center middle"> {{$index+1}} </td>
+									<td class="text-center">
+										<md-checkbox aria-label="checkbox" ng-model="prerequisite.IsSelected" class="mt-checkbox-grid md-primary" />
+									</td>
+									<td class="sbold text-center middle"> {{prerequisite.CourseCode}} </td>
+                                    <td class="sbold middle"> {{prerequisite.CourseTitle}} </td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" data-dismiss="modal" class="btn btn-outline dark" ng-click="getPrerecuisite()">Close</button>
+				<!--<button type="button" class="btn green" ng-click="UpdateEmployee()">Save changes</button>-->
+			</div>
+		</div>
+	</div>
+</div>

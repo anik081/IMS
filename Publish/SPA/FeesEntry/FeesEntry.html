@@ -1,0 +1,102 @@
+﻿</p>
+<div class="row">
+    <div class="col-md-12">
+        <form name="frm" novalidate>
+            <div class="row">
+                <div class="col-md-4" style="padding: 5px 15px !important" ng-class="{'has-error':frm.SelectStudent.$invalid && frm.SelectStudent.$touched}" data-toggle="tooltip" data-placement="bottom" title="SelectStudent">
+                    <select class="bs-select form-control" id="txtFocus" name="SelectStudent" style="width: 100%" required ng-model="cmbSelectStudent" ng-options="selectstudent.FullName for selectstudent in studentList track by selectstudent.StudentId " ng-change="entity.StudentId=cmbSelectStudent.StudentId">
+                        <option value="">-- Select Student --</option>
+                    </select>
+                    <span class="help-block" style="display:block;" ng-if="frm.SelectStudent.$error.required && frm.SelectStudent.$touched">Student is required</span>
+                </div>
+                <div class="col-md-3" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Semester.$invalid && frm.Semester.$touched}" data-toggle="tooltip" data-placement="bottom" title="Semester">
+                    <select class="bs-select form-control" name="Semester" style="width: 100%" required ng-model="cmbSemester" ng-options="semester.SemesterName for semester in semesterList track by semester.SemesterId " ng-change="entity.SemesterId=cmbSemester.SemesterId">
+                        <option value="">-- Semester --</option>
+                    </select>
+                    <span class="help-block" style="display:block;" ng-if="frm.Semester.$error.required && frm.Semester.$touched">Semester is required</span>
+                </div>
+                <div class="col-md-3" style="padding: 5px 15px !important" ng-class="{'has-error':frm.FeesName.$invalid && frm.FeesName.$touched}" data-toggle="tooltip" data-placement="bottom" title="Fees Type">
+                    <select class="bs-select form-control" name="FeesName" style="width: 100%" required ng-model="cmbFeesName" ng-options="FeesName.FeesName for FeesName in feesList track by FeesName.FeesId " ng-change="entity.FeesId=cmbFeesName.FeesId; entity.FeesName  = cmbFeesName.FeesName">
+                        <option value="">-- Fees Type --</option>
+                    </select>
+                    <span class="help-block" style="display:block;" ng-if="frm.FeesName.$error.required && frm.FeesName.$touched">Fees Type is required</span>
+                </div>
+                <div class="col-md-2" style="padding:5px 15px !important">
+                    <div class="form-group" ng-class="{'has-error':frm.Amount.$invalid && frm.Amount.$touched}" data-toggle="tooltip" data-placement="bottom" title="Amount">
+                        <div class="input-group">
+                            <input type="number" name="Amount" placeholder="Amount" class="form-control" ng-model="entity.FeesAmount" maxlength="51" ng-maxlength="50" required />
+                            <span class="input-group-addon">
+                                <i class="fa fa-money font-red"></i>
+                            </span>
+                        </div>
+                        <span class="help-block" style="display: block;" ng-if="frm.Amount.$error.required && frm.Amount.$touched">Amount  is required</span>
+                        <span class="help-block" ng-if="frm.Amount.$error.maxlength">50 Character Max</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2" style="padding:5px 15px !important; float:left">
+                    <input type="button" class="form-control text-center btn btn-success" value="Save" ng-click="Save()" />
+
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet box purple">
+                        <div class="portlet-title sbold">
+                            <div class="caption no-outline">
+                                <i class="fa fa-money" style="font-size: 20px; color:white"></i>Fees List
+                            </div>
+                        </div>
+                        <div class="portlet-body-grid">
+
+                            <div class="row">
+                                <div class="col-md-6" style="padding: 5px 15px !important" data-toggle="tooltip" data-placement="bottom" title="Student">
+                                    <select class="bs-select form-control" name="Student_Search" style="width: 100%" required  ng-model="cmbStudentSearch" ng-options="student.FullName for student in studentList track by student.StudentId " ng-change="entity.StudentIdSearch=cmbStudentSearch.StudentId">
+                                        <option value="">-- Student --</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" style="padding: 5px 15px !important" data-toggle="tooltip" data-placement="bottom" title="Fees Type">
+                                    <select class="bs-select form-control" name="FeesName_Search" style="width: 100%" required ng-model="cmbFeesNameSearch" ng-options="FeesName.FeesName for FeesName in feesList track by FeesName.FeesId " ng-change="entity.FeesIdSearch=cmbFeesNameSearch.FeesId">
+                                        <option value="">-- Fees Type --</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" style="padding: 5px 15px !important">
+                                    <input type="button" class="form-control text-center btn btn-success" value="Search" ng-click="Search()" ng-disabled="!cmbStudentSearch || !cmbFeesNameSearch" />
+                                </div>
+
+                                </p>
+                                <div class="form-group" style="padding:5px 15px !important">
+                                    <div class="table-outer" >
+                                        <table class="responstable table-hover">
+                                            <tbody>
+                                                <tr class="t-head" style="font-size: 14px !important;">
+                                                    <th class="sbold">Student</th>
+                                                    <th class="sbold text-center" data-th="Details"><span>Fees Type</span></th>
+                                                    <th class="sbold text-center">Semester</th>
+                                                    <th class="sbold text-center">Amount</th>
+
+
+                                                </tr>
+                                                <tr dir-paginate="item in entityListPaged | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count">
+                                                    <td class="text-center">{{item.FullName}}</td>
+                                                    <td class="text-center">{{item.FeesName}}</td>
+                                                    <td class="text-center">{{item.SemesterName}}</td>
+                                                    <td class="text-center">{{item.FeesAmount}}</td>
+
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+﻿</p>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box purple">
+            <div class="portlet-title sbold">
+                <div class="caption no-outline">
+                    <i class="fa fa-user" style="font-size: 20px; color:white"></i>Exam Result
+                </div>
+            </div>
+            <div class="portlet-body-grid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form name="frm" novalidate>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Semester.$invalid && frm.Semester.$touched}" data-toggle="tooltip" data-placement="bottom" title="Semester">
+                                        <select class="bs-select form-control" id="txtFocus" name="Semester" style="width: 100%" required ng-model="cmbSemester" ng-options="semester.SemesterName for semester in semesterList track by semester.SemesterId " ng-change="getCourseOffer(); entity.SemesterId=cmbSemester.SemesterId">
+                                            <option value="">-- Semester --</option>
+                                        </select>
+
+                                        <span class="help-block" style="display:block;" ng-if="frm.Semester.$error.required && frm.Semester.$touched">Semester is required</span>
+                                    </div>
+                                    <div class="col-md-4" style="padding: 5px 15px !important" ng-class="{'has-error':frm.SelectCourse.$invalid && frm.SelectCourse.$touched}" data-toggle="tooltip" data-placement="bottom" title="Select Course">
+                                        <select class="bs-select form-control" name="SelectCourse" style="width: 100%" required ng-model="cmbCourse" ng-options="course.CourseCodeWithTitle for course in courseList track by course.CourseOfferId " ng-change="entity.CourseOfferId=cmbCourse.CourseOfferId" ng-disabled="!cmbSemester">
+                                            <option value="">-- Select Course --</option>
+                                        </select>
+                                        <span class="help-block" style="display:block;" ng-if="frm.SelectCourse.$error.required && frm.SelectCourse.$touched">Course is required</span>
+                                    </div>
+                                    <div class="col-md-4" style="padding: 5px 15px !important" ng-class="{'has-error':frm.ExamType.$invalid && frm.ExamType.$touched}" data-toggle="tooltip" data-placement="bottom" title="Exam Type">
+                                        <select class="bs-select form-control" name="ExamType" style="width: 100%" required ng-model="cmbExamType" ng-options="examType.MarkTypeName for examType in examTypeList track by examType.MarkTypeId " ng-change="entity.MarkTypeId=cmbExamType.MarkTypeId">
+                                            <option value="">-- Exam Type --</option>
+                                        </select>
+                                        <span class="help-block" style="display:block;" ng-if="frm.ExamType.$error.required && frm.ExamType.$touched">Exam Type is required</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-4" style="padding: 5px 15px !important">
+                                        <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="No Of Students">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="# of Students" name="NoOfStudents" ng-model="entity.NoOfStudents" maxlength="51" ng-maxlength="50" readonly>
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-user font-red"></i>
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3" style="padding: 5px 15px !important">
+                                        <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="No Of Attandence">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="# of Attandence" name="NoOfAttandence" ng-model="entity.NoOfAttandence" maxlength="51" ng-maxlength="50" readonly>
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-user font-red"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3" style="padding: 5px 15px !important">
+                                        <input type="button" class="form-control text-center btn btn-success" value="Load" ng-click="getStudentList()" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group" style="padding: 5px 15px !important">
+                                        <div class="tbl-outer">
+                                            <table class="responstable table-hover">
+                                                <tbody>
+                                                    <tr class="t-head" style="font-size: 14px !important">
+                                                        <th class="sbold">#</th>
+                                                        <th class="sbold text-center" data-th="Details"><span>ID</span></th>
+                                                        <th class="sbold text-center">Student Name</th>
+                                                        <th class="sbold text-center">Mark</th>
+                                                    </tr>
+                                                    <tr dir-paginate="item in studentList | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count">
+                                                        <td class="text-center">{{$index + 1}}</td>
+                                                        <td class="text-center">{{item.StudentId}}</td>
+                                                        <td class="text-center">{{item.FullName}}</td>
+                                                        <td class="text-center">
+                                                            <div>
+                                                                <input type="number" class="form-control text-center" name="mark" maxlength="51" ng-maxlength="50" ng-model="item.StudentMark" required />
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-3" style="float:right;padding: 5px  !important">
+            <input type="button" class="form-control text-center" value="Reset" ng-click="resetForm()" />
+        </div>
+        <div class="col-md-3" style="float:right;padding: 5px  !important">
+            <input type="button" class="form-control text-center btn btn-success" value="Save" ng-click="post('save')" />
+        </div>
+
+    </div>
+</div>

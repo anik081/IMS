@@ -568,13 +568,85 @@
     }]
     $scope.batchList = [{
         "BatchId": "1",
-        "BatchName": "Spring"
+        "BatchName": "Batch-11"
     }, {
         "BatchId": "2",
-        "BatchName": "Summer"
+        "BatchName": "Batch-12"
     }, {
         "BatchId": "3",
-        "BatchName": "Fall"
+        "BatchName": "Batch-13"
+
+    }, {
+        "BatchId": "4",
+        "BatchName": "Batch-14"
+    }, {
+        "BatchId": "5",
+        "BatchName": "Batch-15"
+    }, {
+        "BatchId": "6",
+        "BatchName": "Batch-16"
+
+    },
+    {
+        "BatchId": "7",
+        "BatchName": "Batch-17"
+    }, {
+        "BatchId": "8",
+        "BatchName": "Batch-18"
+    }, {
+        "BatchId": "9",
+        "BatchName": "Batch-19"
+
+    }, {
+        "BatchId": "10",
+        "BatchName": "Batch-20"
+    }, {
+        "BatchId": "11",
+        "BatchName": "Batch-21"
+    }, {
+        "BatchId": "12",
+        "BatchName": "Batch-22"
+
+    }, {
+        "BatchId": "13",
+        "BatchName": "Batch-23"
+    }, {
+        "BatchId": "114",
+        "BatchName": "Batch-24"
+    }, {
+        "BatchId": "15",
+        "BatchName": "Batch-25"
+
+    }, {
+        "BatchId": "16",
+        "BatchName": "Batch-26"
+    }, {
+        "BatchId": "17",
+        "BatchName": "Batch-27"
+    }, {
+        "BatchId": "18",
+        "BatchName": "Batch-28"
+
+    },
+    {
+        "BatchId": "19",
+        "BatchName": "Batch-29"
+    }, {
+        "BatchId": "20",
+        "BatchName": "Batch-30"
+    }, {
+        "BatchId": "21",
+        "BatchName": "Batch-31"
+
+    }, {
+        "BatchId": "22",
+        "BatchName": "Batch-32"
+    }, {
+        "BatchId": "23",
+        "BatchName": "Batch-33"
+    }, {
+        "BatchId": "24",
+        "BatchName": "Batch-34"
 
     }]
     function getProgramTypeActive() {

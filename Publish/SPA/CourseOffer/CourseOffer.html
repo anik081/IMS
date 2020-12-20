@@ -1,0 +1,181 @@
+﻿</p>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box purple">
+            <div class="portlet-title sbold">
+                <div class="caption">
+                    <label>
+                        Course Offer
+                    </label>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <form name="frm">
+                    <div class="row">
+                        <div class="form-body">
+                            <div class="col-md-6">
+                                <div class="form-group" style=" padding: 5px 0px !important" data-toggle="tooltip" data-placement="bottom" title="CampusName">
+                                    <input type="text" class="form-control text-center" placeholder="Campus Name" name="CampusName" ng-model="courseTypeList.CampusName" maxlength="51" ng-maxlength="50" required readonly />
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Semester.$invalid && frm.Semester.$touched}" data-toggle="tooltip" data-placement="bottom" title="Semester">
+                                <select class="bs-select form-control" id="txtFocus" name="Semester" style="width: 100%" required ng-model="cmbSemester" ng-options="semester.SemesterName for semester in semesterTypeList track by semester.SemesterId " ng-change="courseTypeList.SemesterName=cmbSemester.SemesterName;courseTypeList.SemesterId=cmbSemester.SemesterId">
+                                    <option value="">-- Semester --</option>
+                                </select>
+                                <span class="help-block" style="display:block;" ng-if="frm.Semester.$error.required && frm.Semester.$touched">Semester is required</span>
+                            </div>
+                        </div>
+                        <div class="form-group" style="padding: 5px 15px !important" ;">
+                            <div class="table-outer">
+                                <table class="responstable table-hover">
+                                    <tbody>
+                                        <tr class="t-head" style="font-size: 14px !important;">
+                                            <th class="sbold" width="5%">Select</th>
+                                            <th class="sbold text-center" data-th="Details" width="10%"><span>Course</span></th>
+                                            <th class="sbold text-center" width="15%">Instructor</th>
+                                            <th class="sbold text-center" width="10%">Total Seat</th>
+                                            <th class="sbold text-center">Schedule</th>
+                                        </tr>
+                                        <tr ng-repeat="aCourse in courseTypeList">
+                                            <td> <md-checkbox aria-label="checkbox" ng-model="aCourse.IsSelected" class="mt-checkbox-grid md-primary" /></td>
+                                            <td class="text-center">
+                                                <input type="text" class="form-control" value="{{aCourse.CourseCode}}" ng-model="aCourse.CourseCode" style="text-align:center;" readonly />
+
+                                            </td>
+                                            <td>
+                                                <select class="form-control" name="ProgramHeadId" style="width: 100%" ng-model="cmbProgramHead" ng-options="programhead.EmployeeName for programhead in employeeList track by programhead.EmployeeId  " ng-change="aCourse.ProgramHeadId =cmbProgramHead.EmployeeId">
+                                                    <option value="">-- Select Instructor --</option>
+                                                </select>
+                                            </td>
+                                            <td class="text-center">
+                                                <input type="number" class="form-control text-center" ng-model="aCourse.TotalSeat" />
+                                            </td>
+                                            <td><input type="text" class="form-control text-center" ng-model="aCourse.ScheduleSummary" readonly data-toggle="modal" data-target="#scheduleModal" ng-click="scheduleOpen(aCourse.CourseId, $index)" /> </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <div class="col-md-12">
+                                    <div class="form-actions noborder pull-right">
+                                        <button type="button" class="btn btn-lg purple box-shadow--8dp" ng-click="post('save')">Submit</button><!--LockSaOrReview()-->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade" id="scheduleModal" tabindex="-1" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="getPrograms()"></button>
+                <h4 class="modal-title sbold">Schedule List</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="margin-bottom: -25px;">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-3" style="padding: 5px 15px !important" data-toggle="tooltip" data-placement="bottom" title="Day">
+                                    <select class="bs-select form-control" name="Day" style="width: 100%" required ng-model="cmbDay" ng-options="day.DayName for day in dayList track by day.DayId">
+                                        <option value="">-- Day --</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-md-3" style="padding: 5px 15px !important">
+                                    <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="From Time">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" ng-model="StartTime" id="dtFrom" name="FromTime" placeholder="From" required readonly />
+                                            <span class="input-group-btn">
+                                                <button class="btn default" type="button" tabindex="-1" ng-click="openCalendar('from')">
+                                                    <i class="fa fa-clock-o"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3" style="padding: 5px 15px !important">
+                                    <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="To Time">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" ng-model="EndTime" id="dtTo" name="ToTime" placeholder="To" required readonly />
+                                            <span class="input-group-btn">
+                                                <button class="btn default" type="button" tabindex="-1" ng-click="openCalendar('to')">
+                                                    <i class="fa fa-clock-o"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3" style="padding: 5px 15px !important">
+                                    <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="Room">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" ng-model="RoomNo" name="Room" placeholder="Room #" required />
+                                            <span class="input-group-btn">
+                                                <i class="fa fa-user"></i>
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2" style="padding: 5px 15px !important">
+                                    <input type="button" class="form-control text-center btn btn-success" value="ADD" ng-click="addSchedule()" />
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <table class="table table-striped table-bordered table-advance table-hover" style="margin-bottom: 25px!important;">
+                        <thead>
+                            <tr>
+                                <th class="sbold text-center middle" width="1%">#</th>
+                                <th class="sbold text-center">Day</th>
+                                <th class="sbold text-center middle">From</th>
+                                <th class="sbold text-center middle">TO</th>
+                                <th class="sbold text-center middle">Room No</th>
+                                <th class="sbold text-center middle">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hoverHand searchRow" ng-repeat="schedule in scheduleListDisplay">
+                                <td class="text-center middle"> {{$index+1}} </td>
+                                <td class="sbold text-center middle"> {{schedule.DayName}} </td>
+                                <td class="sbold middle"> {{schedule.StartTime}} </td>
+                                <td class="sbold middle"> {{schedule.EndTime}} </td>
+                                <td class="sbold middle"> {{schedule.RoomNo}} </td>
+                                <td class="sbold middle">
+                                    <div class="form-group">
+                                        <div >
+                                            <input type="button" class="form-control text-center btn btn-success" value="REMOVE" ng-click="removeSchedule($index)"/>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-outline dark">Close</button>
+                <!--<button type="button" class="btn green" ng-click="UpdateEmployee()">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>
