@@ -1,0 +1,407 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>Home | IMS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Preview page for statistics, charts, recent events and reports" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-timepicker.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-block-ui/0.2.2/angular-block-ui.css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    @*<link href="~/Content/datatables.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/datatables.bootstrap.css" rel="stylesheet" type="text/css" />*@
+
+    @*<link href="~/Content/daterangepicker.min.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Content/morris.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Content/fullcalendar.min.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Content/jqvmap.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="~/Content/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="~/Content/plugins.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="~/Content/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="~/Content/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/customDirPagination.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/alertify.core.css" rel="stylesheet" />
+    <link href="~/Content/alertify.default.css" rel="stylesheet" />
+    @*<link href="~/Content/select2.css" rel="stylesheet" type="text/css" />*@
+    <!-- END THEME LAYOUT STYLES -->
+</head>
+<!-- END HEAD -->
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+    <div class="page-wrapper" ng-app="csmApp">
+        <!-- BEGIN HEADER -->
+        <div class="page-header navbar navbar-fixed-top">
+            <!-- BEGIN HEADER INNER -->
+            <div class="page-header-inner ">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="https://www.fisherpaykel.com/nz.html" target="_blank">
+                        <img src="~/Content/img/TopBarLogo.png" alt="logo" class="logo-default" />
+                    </a>
+                    <div class="menu-toggler sidebar-toggler">
+                        <span></span>
+                    </div>
+                </div>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span></span>
+                </a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <div class="top-menu-left">
+                    <h3 class="full-text sbold" style="margin-top:10px!important;">
+                        <strong>IMS</strong>
+                    </h3>
+                    <h3 class="short-text sbold" style="margin-top:10px!important;">
+                        <strong>BM</strong>
+                    </h3>
+                </div>
+                <div class="top-menu" ng-controller="TopBarController">
+                    <ul class="nav navbar-nav pull-right">
+                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="~/Content/img/avatar.png" />
+                                <span class="username username-hide-on-mobile uppercase sbold"> {{loggedinUser.Username}} </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a ng-click="logOut()">
+                                        <i class="icon-logout sbold"></i> Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END USER LOGIN DROPDOWN -->
+                    </ul>
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+            <!-- END HEADER INNER -->
+        </div>
+        <!-- END HEADER -->
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <div class="page-sidebar-wrapper" ng-controller="SideBarController">
+                <!-- BEGIN SIDEBAR -->
+                <div class="page-sidebar navbar-collapse collapse">
+                    <!-- BEGIN SIDEBAR MENU -->
+                    <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                        <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                        <li class="sidebar-toggler-wrapper hide">
+                            <div class="sidebar-toggler">
+                                <span></span>
+                            </div>
+                        </li>
+                        <!-- END SIDEBAR TOGGLER BUTTON -->
+                        <li class="nav-item " ng-class="{ 'active' : isHome }" ng-click="setActiveMenu('home')">
+                            <a href="#/Home" class="nav-link nav-toggle">
+                                <i class="icon-home"></i>
+                                <span class="title">Home</span>
+                                <span class="myselected" ng-show="isHome"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item " ng-class="{ 'active' : isAdmin }">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-question"></i>
+                                <span class="title">Admin</span>
+                                <span class="arrow"></span>
+                                <span class="myselected" ng-show="isAdmin"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item " ng-click="setActiveMenu('employeeEntry')" ng-class="{selectedsubmenu: isAdminEmployeeEntry, unselectedsubmenu: !isAdminEmployeeEntry}">
+                                    <a href="#/EmployeeEntry" class="nav-link">
+                                        <i class="icon-star"></i>
+                                        <span class="title">Employee Entry</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item " ng-click="setActiveMenu('marktype')" ng-class="{selectedsubmenu: isAdminMarkType, unselectedsubmenu: !isAdminMarkType}">
+                                    <a href="#/MarkType" class="nav-link">
+                                        <i class="icon-star"></i>
+                                        <span class="title">Mark Type</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item " ng-click="setActiveMenu('feestype')" ng-class="{selectedsubmenu: isAdminFeesType, unselectedsubmenu: !isAdminFeesType}">
+                                    <a href="#/FeesType" class="nav-link">
+                                        <i class="icon-star"></i>
+                                        <span class="title">Fees Type</span>
+                                    </a>
+                                </li>
+                                <!--
+    <li class="nav-item " ng-click="setActiveMenu('paymentMethod')" ng-class="{selectedsubmenu: isAdminPaymentMethod, unselectedsubmenu: !isAdminPaymentMethod}">
+        <a href="#/PaymentMethod" class="nav-link">
+            <i class="icon-star"></i>
+            <span class="title">Payment Method</span>
+        </a>
+    </li>
+        -->
+                                <li class="nav-item " ng-click="setActiveMenu('program')" ng-class="{selectedsubmenu: isAdminProgram, unselectedsubmenu: !isAdminProgram}">
+                                    <a href="#/Program" class="nav-link">
+                                        <i class="icon-star"></i>
+                                        <span class="title">Program</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item " ng-click="setActiveMenu('course')" ng-class="{selectedsubmenu: isAdminCourse, unselectedsubmenu: !isAdminCourse}">
+                                    <a href="#/Course" class="nav-link">
+                                        <i class="icon-star"></i>
+                                        <span class="title">Course</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item " ng-click="setActiveMenu('semester')" ng-class="{selectedsubmenu: isAdminSemester, unselectedsubmenu: !isAdminSemester}">
+                                    <a href="#/Semester" class="nav-link">
+                                        <i class="icon-star"></i>
+                                        <span class="title">Semester</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item " ng-click="setActiveMenu('courseOffer')" ng-class="{selectedsubmenu: isAdminCourseOffer, unselectedsubmenu: !isAdminCourseOffer}">
+                                    <a href="#/CourseOffer" class="nav-link">
+                                        <i class="icon-star"></i>
+                                        <span class="title">Course Offer</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item " ng-class="{ 'active' : isStudent }">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-question"></i>
+                                <span class="title">Student</span>
+                                <span class="arrow"></span>
+                                <span class="myselected" ng-show="isStudent"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item " ng-click="setActiveMenu('admission')" ng-class="{selectedsubmenu: isStudentAdmission, unselectedsubmenu: !isStudentAdmission}">
+                                    <a href="#/Admisson" class="nav-link">
+                                        <i class="icon-star"></i>
+                                        <span class="title">Admisson</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item " ng-click="setActiveMenu('registration')" ng-class="{selectedsubmenu: isStudentRegistration, unselectedsubmenu: !isStudentRegistration}">
+                                    <a href="#/Registration" class="nav-link">
+                                        <i class="icon-star"></i>
+                                        <span class="title">Registration</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item " ng-class="{ 'active' : isClassExam }">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-question"></i>
+                                <span class="title">Class & Exam</span>
+                                <span class="arrow"></span>
+                                <span class="myselected" ng-show="isClassExam"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item " ng-click="setActiveMenu('attendance')" ng-class="{selectedsubmenu: isClassExamAttandence, unselectedsubmenu: !isExamClassAttandence}">
+                                    <a href="#/Attendance" class="nav-link">
+                                        <i class="icon-star"></i>
+                                        <span class="title">Attendance</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item " ng-click="setActiveMenu('examResult')" ng-class="{selectedsubmenu: isClassExamExamResult, unselectedsubmenu: !isClassExamExamResult}">
+                                    <a href="#/ExamResult" class="nav-link">
+                                        <i class="icon-star"></i>
+                                        <span class="title">Exam Result</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item " ng-class="{ 'active' : isAccounts }">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-question"></i>
+                                <span class="title">Accounts</span>
+                                <span class="arrow"></span>
+                                <span class="myselected" ng-show="isAccounts"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item " ng-click="setActiveMenu('feesEntry')" ng-class="{selectedsubmenu: isAccountsFeesEnrty, unselectedsubmenu: !isAccountsFeesEnrty}">
+                                    <a href="#/FeesEntry" class="nav-link">
+                                        <i class="icon-star"></i>
+                                        <span class="title">Fees Entry</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item " ng-click="setActiveMenu('feesCollection')" ng-class="{selectedsubmenu: isAccountsFeesCollection, unselectedsubmenu: !isAccountsFeesCollection}">
+                                    <a href="#/FeesCollection" class="nav-link">
+                                        <i class="icon-star"></i>
+                                        <span class="title">Fees Collection</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- END SIDEBAR MENU -->
+                    <!-- END SIDEBAR MENU -->
+                </div>
+                <!-- END SIDEBAR -->
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="ng-view" autoscroll="true"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END CONTENT -->
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div class="page-footer">
+            <div class="page-footer-inner">
+                2020 &copy; IMS <b>Version</b> 1.0.0.0 [05 Feb 2020] &nbsp;|&nbsp;
+                <a target="_blank" href="https://www.quadtheorybd.com.com">Quad Theory Ltd.</a>
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!-- END FOOTER -->
+    </div>
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="~/Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/js.cookie.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap-switch.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    @*<script src="~/Scripts/datatables.min.js" type="text/javascript"></script>
+        <script src="~/Scripts/datatables.bootstrap.js" type="text/javascript"></script>*@
+
+    @*<script src="~/Scripts/daterangepicker.min.js" type="text/javascript"></script>*@
+    <script src="~/Scripts/morris.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/raphael-min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.waypoints.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.counterup.min.js" type="text/javascript"></script>
+
+    <script src="~/Scripts/amcharts/amcharts.js" type="text/javascript"></script>
+    <script src="~/Scripts/amcharts/serial.js" type="text/javascript"></script>
+    <script src="~/Scripts/amcharts/pie.js" type="text/javascript"></script>
+    <script src="~/Scripts/amcharts/radar.js" type="text/javascript"></script>
+    <script src="~/Scripts/amcharts/themes/light.js" type="text/javascript"></script>
+    <script src="~/Scripts/amcharts/themes/patterns.js" type="text/javascript"></script>
+    <script src="~/Scripts/amcharts/themes/chalk.js" type="text/javascript"></script>
+    <script src="~/Scripts/ammap/ammap.js" type="text/javascript"></script>
+    <script src="~/Scripts/ammap/worldLow.js" type="text/javascript"></script>
+    <script src="~/Scripts/amcharts/amstock.js" type="text/javascript"></script>
+
+    @*<script src="~/Scripts/fullcalendar.min.js" type="text/javascript"></script>*@
+    <script src="~/Scripts/horizontal-timeline.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.flot.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.flot.resize.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.flot.categories.min.js" type="text/javascript"></script>
+
+    <script src="~/Scripts/jquery.easypiechart.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.sparkline.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jqvmap/jquery.vmap.js" type="text/javascript"></script>
+    <script src="~/Scripts/jqvmap/jquery.vmap.russia.js" type="text/javascript"></script>
+    <script src="~/Scripts/jqvmap/jquery.vmap.world.js" type="text/javascript"></script>
+    <script src="~/Scripts/jqvmap/jquery.vmap.europe.js" type="text/javascript"></script>
+    <script src="~/Scripts/jqvmap/jquery.vmap.germany.js" type="text/javascript"></script>
+    <script src="~/Scripts/jqvmap/jquery.vmap.usa.js" type="text/javascript"></script>
+    <script src="~/Scripts/jqvmap/jquery.vmap.sampledata.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL SCRIPTS -->
+    <script src="~/Scripts/app.min.js" type="text/javascript"></script>
+    <!-- END THEME GLOBAL SCRIPTS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="~/Scripts/dashboard.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- BEGIN THEME LAYOUT SCRIPTS -->
+    <script src="~/Scripts/layout.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/demo.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/quick-sidebar.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/quick-nav.min.js" type="text/javascript"></script>
+    <!-- END THEME LAYOUT SCRIPTS -->
+    @*<script>
+            window.onbeforeunload = function (e) {
+                e = e || window.event;
+                return 'Sure?';
+        </script>*@
+
+    @Scripts.Render("~/bundles/vendors")
+
+    <script src="https://code.angularjs.org/1.5.0/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Content/jk-rating-stars.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jk-rating-stars.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/ui-bootstrap-tpls-1.3.3.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/moment.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/bootstrap-timepicker.min.js"></script>
+
+    <script src="~/SPA/app.js"></script>
+    <script src="~/Scripts/alertify.min.js"></script>
+    <script src="~/Scripts/dirPagination.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-block-ui/0.2.2/angular-block-ui.min.js"></script>
+    @*<script src="~/Scripts/table-datatables-scroller.min.js" type="text/javascript"></script>*@
+    @*<script src="~/Scripts/select2.min.js" type="text/javascript"></script>*@
+
+    <script src="~/SPA/TopBarController.js"></script>
+    <script src="~/SPA/SideBarController.js"></script>
+
+    <script src="~/SPA/Home/HomeController.js"></script>
+    <script src="~/SPA/Course/CourseCtrl.js"></script>
+    <script src="~/SPA/Program/ProgramCtrl.js"></script>
+    <script src="~/SPA/Admisson/AdmissonCtrl.js"></script>
+    <script src="~/SPA/MarkType/MarkTypeCtrl.js"></script>
+    <script src="~/SPA/Registration/RegistrationCtrl.js"></script>
+    <script src="~/SPA/Semester/SemesterCtrl.js"></script>
+    <script src="~/SPA/CourseOffer/CourseOfferCtrl.js"></script>
+    <script src="~/SPA/Attendance/AttendanceCtrl.js"></script>
+    <script src="~/SPA/ExamResult/ExamResultCtrl.js"></script>
+    <script src="~/SPA/FeesEntry/FeesEntryCtrl.js"></script>
+    <script src="~/SPA/FeesCollection/FeesCollectionCtrl.js"></script>
+    <script src="~/SPA/FeesType/FeesTypeCtrl.js"></script>
+    <script src="~/SPA/PaymentMethod/PaymentMethodCtrl.js"></script>
+    <script src="~/SPA/EmployeeEntry/EmployeeEntryCtrl.js"></script>
+
+
+    <script src="~/SPA/CustomerProfile/CustomerProfileCtrl.js"></script>
+    <script src="~/SPA/Package/PackageCtrl.js"></script>
+    <script src="~/SPA/AdditionalFees/AdditionalFeesCtrl.js"></script>
+    <script src="~/SPA/Billing/BillingCtrl.js"></script>
+    <script src="~/SPA/DueList/DueListCtrl.js"></script>
+    <script src="~/SPA/User/UserCtrl.js"></script>
+</body>
+</html>

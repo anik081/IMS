@@ -1,0 +1,322 @@
+﻿<p />
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-user"></i>
+            <span>My Reviews</span>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <span>Self Appraisal</span>
+        </li>
+    </ul>
+</div>
+<p />
+<div block-ui="saOrReviewSaveBlock">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet box green-noheader">
+                <div class="portlet-title sbold" style="background-color: #36c6d3;">
+                    <div class="caption no-outline">
+                        <i class="fa fa-user" style="font-size: 20px; color:white"></i>Customer Profile
+                    </div>
+                    <!--<div class="actions">
+                        <a href="javascript:;" class="btn btn-default btn-sm sbold" ng-click="PrintReport()" style="min-width:100px !important;">
+                            <i class="fa fa-print"></i> Print
+                        </a>
+                    </div>-->
+                </div>
+                <div class="portlet-body-grid">
+                    <div class="tabbable-line">
+                        <ul class="nav nav-tabs ">
+                            <li class="active">
+                                <a data-target="#tab_1_1" data-toggle="tab" class="uppercase sbold"> Basic </a>
+                            </li>
+                            <li>
+                                <a data-target="#tab_1_2" data-toggle="tab" class="uppercase sbold"> Additional Fees </a>
+                            </li>
+                            <li>
+                                <a data-target="#tab_1_3" data-toggle="tab" class="uppercase sbold"> Mikrotik </a>
+                            </li>
+                            <li>
+                                <a data-target="#tab_1_4" data-toggle="tab" class="uppercase sbold"> QR Code </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <p />
+                            <div class="tab-pane active" id="tab_1_1">
+                                <form name="frm" novalidate>
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group" ng-class="{ 'has-error' : frm.CustomerName.$touched && frm.CustomerName.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Customer Name">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" placeholder="Name" name="CustomerName" ng-model="entity.CustomerName" maxlength="51" ng-maxlength="50">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-user font-red"></i>
+                                                        </span>
+                                                    </div>
+                                                    <span class="help-block" style="display: block;" ng-if="frm.CustomerName.$error.required && frm.CustomerName.$touched">Name is required</span>
+                                                    <span class="help-block" ng-if="frm.CustomerName.$error.maxlength">50 Character Max</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group" ng-class="{ 'has-error' : frm.CustomerName.$touched && frm.CustomerName.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Customer Name">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" placeholder="Address" name="CustomerName" ng-model="entity.CustomerName" maxlength="51" ng-maxlength="50">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-user font-red"></i>
+                                                        </span>
+                                                    </div>
+                                                    <span class="help-block" style="display: block;" ng-if="frm.CustomerName.$error.required && frm.CustomerName.$touched">Name is required</span>
+                                                    <span class="help-block" ng-if="frm.CustomerName.$error.maxlength">50 Character Max</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group" ng-class="{ 'has-error' : frm.CustomerName.$touched && frm.CustomerName.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Customer Name">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" placeholder="Mobile" name="CustomerName" ng-model="entity.CustomerName" maxlength="51" ng-maxlength="50">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-user font-red"></i>
+                                                        </span>
+                                                    </div>
+                                                    <span class="help-block" style="display: block;" ng-if="frm.CustomerName.$error.required && frm.CustomerName.$touched">Name is required</span>
+                                                    <span class="help-block" ng-if="frm.CustomerName.$error.maxlength">50 Character Max</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group" ng-class="{ 'has-error' : frm.CustomerName.$touched && frm.CustomerName.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Customer Name">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" placeholder="Email" name="CustomerName" ng-model="entity.CustomerName" maxlength="51" ng-maxlength="50">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-user font-red"></i>
+                                                        </span>
+                                                    </div>
+                                                    <span class="help-block" style="display: block;" ng-if="frm.CustomerName.$error.required && frm.CustomerName.$touched">Name is required</span>
+                                                    <span class="help-block" ng-if="frm.CustomerName.$error.maxlength">50 Character Max</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group" ng-class="{ 'has-error' : frm.CustomerName.$touched && frm.CustomerName.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Customer Name">
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control" placeholder="Password" name="CustomerName" ng-model="entity.CustomerName" maxlength="51" ng-maxlength="50">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-user font-red"></i>
+                                                        </span>
+                                                    </div>
+                                                    <span class="help-block" style="display: block;" ng-if="frm.CustomerName.$error.required && frm.CustomerName.$touched">Name is required</span>
+                                                    <span class="help-block" ng-if="frm.CustomerName.$error.maxlength">50 Character Max</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group" ng-class="{ 'has-error' : frm.CustomerName.$touched && frm.CustomerName.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Customer Name">
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control" placeholder="Password" name="CustomerName" ng-model="entity.CustomerName" maxlength="51" ng-maxlength="50">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-user font-red"></i>
+                                                        </span>
+                                                    </div>
+                                                    <span class="help-block" style="display: block;" ng-if="frm.CustomerName.$error.required && frm.CustomerName.$touched">Name is required</span>
+                                                    <span class="help-block" ng-if="frm.CustomerName.$error.maxlength">50 Character Max</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group" ng-class="{ 'has-error' : frm.CustomerName.$touched && frm.CustomerName.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Customer Name">
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control" placeholder="Bill Generation Date" name="CustomerName" ng-model="entity.CustomerName" maxlength="51" ng-maxlength="50">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-user font-red"></i>
+                                                        </span>
+                                                    </div>
+                                                    <span class="help-block" style="display: block;" ng-if="frm.CustomerName.$error.required && frm.CustomerName.$touched">Name is required</span>
+                                                    <span class="help-block" ng-if="frm.CustomerName.$error.maxlength">50 Character Max</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group" ng-class="{ 'has-error' : frm.CustomerName.$touched && frm.CustomerName.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Customer Name">
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control" placeholder="Bill Due In Day" name="CustomerName" ng-model="entity.CustomerName" maxlength="51" ng-maxlength="50">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-user font-red"></i>
+                                                        </span>
+                                                    </div>
+                                                    <span class="help-block" style="display: block;" ng-if="frm.CustomerName.$error.required && frm.CustomerName.$touched">Name is required</span>
+                                                    <span class="help-block" ng-if="frm.CustomerName.$error.maxlength">50 Character Max</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group" ng-class="{ 'has-error' : frm.Tournament.$touched && frm.Tournament.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Notification Type">
+                                                    <select class="bs-select form-control" ng-model="cmbTournament" name="Tournament" style="width: 100%" required ng-options="tournament.TournamentTitle for tournament in tournamentList track by tournament.TournamentId" ng-change="entity.TournamentId=cmbTournament.TournamentId;TournamentChange()">
+                                                        <option value="">---Select Notification Type---</option>
+                                                    </select>
+                                                    <span class="help-block" ng-if="frm.Tournament.$error.required && frm.Tournament.$touched">Notification Type is required</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="tab_1_2">
+                                <table class="table table-striped table-bordered table-advance table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <th rowspan="2" class="sbold t-cell-center-star-tworow" style="background-color: #f1f4f7">
+                                                <strong>Question</strong>
+                                            </th>
+                                            <th colspan="2" class="sbold t-cell-center" style="background-color: #f1f4f7">
+                                                <strong>Self Appraisal</strong>
+                                            </th>
+                                            <th colspan="2" class="sbold t-cell-center" style="background-color: #f1f4f7">
+                                                <strong>Manager</strong>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th width="10%" class="sbold t-cell-center" style="background-color: #f1f4f7">
+                                                <strong>Rating</strong>
+                                            </th>
+                                            <th width="10%" class="sbold t-cell-center" style="background-color: #f1f4f7">
+                                                <strong>Comment</strong>
+                                            </th>
+                                            <th width="10%" class="sbold t-cell-center" style="background-color: #f1f4f7">
+                                                <strong>Rating</strong>
+                                            </th>
+                                            <th width="10%" class="sbold t-cell-center" style="background-color: #f1f4f7">
+                                                <strong>Comment</strong>
+                                            </th>
+                                        </tr>
+                                        <tr ng-repeat="aDetail in ManagingList">
+                                            <td class="t-cell-left-star"> {{aDetail.Question}} </td>
+                                            <!-- Rating -->
+                                            <td class="middle">
+                                                <a ng-click="SaveRating(aDetail)">
+                                                    <jk-rating-stars rating="aDetail.SelfAppraisalRating" read-only="SaOrReview.FlagSelfAppraisal"></jk-rating-stars>
+                                                </a>
+                                            </td>
+                                            <!-- Comment -->
+                                            <td class="text-center middle">
+                                                <span class="glyphicon glyphicon-edit icon-lg-success" ng-show="!SaOrReview.FlagSelfAppraisal" data-toggle="modal" data-target="#commentModal" ng-click="OpenModal(aDetail)"></span>
+                                                <span class="glyphicon glyphicon-book icon-lg" ng-show="SaOrReview.FlagSelfAppraisal" data-toggle="modal" data-target="#commentModal" ng-click="OpenModal(aDetail)"></span>
+                                            </td>
+                                            <!-- Manager Rating -->
+                                            <td class="middle">
+                                                <a ng-show="SaOrReview.FlagReview" ng-click="SaveManagerRating()">
+                                                    <jk-rating-stars rating="aDetail.ReviewRating" read-only="SaOrReview.FlagReview"></jk-rating-stars>
+                                                </a>
+                                            </td>
+                                            <!-- Manager Comment -->
+                                            <td class="text-center middle">
+                                                <span class="glyphicon glyphicon-book icon-lg" ng-show="SaOrReview.FlagReview" data-toggle="modal" data-target="#commentModalManager" ng-click="OpenModalManager(aDetail)"></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="tab_1_3">
+                                <table class="table table-striped table-bordered table-advance table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <th width="15%" rowspan="2" class="sbold t-cell-center-star-tworow" style="background-color: #f1f4f7">
+
+                                            </th>
+                                            <th rowspan="2" class="sbold t-cell-center-star-tworow" style="background-color: #f1f4f7">
+                                                <strong>Definition</strong>
+                                            </th>
+                                            <th colspan="2" class="sbold t-cell-center" style="background-color: #f1f4f7">
+                                                <strong>Self Appraisal</strong>
+                                            </th>
+                                            <th colspan="2" class="sbold t-cell-center" style="background-color: #f1f4f7">
+                                                <strong>Manager</strong>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th width="10%" class="sbold t-cell-center" style="background-color: #f1f4f7">
+                                                <strong>Rating</strong>
+                                            </th>
+                                            <th width="10%" class="sbold t-cell-center" style="background-color: #f1f4f7">
+                                                <strong>Comment</strong>
+                                            </th>
+                                            <th width="10%" class="sbold t-cell-center" style="background-color: #f1f4f7">
+                                                <strong>Rating</strong>
+                                            </th>
+                                            <th width="10%" class="sbold t-cell-center" style="background-color: #f1f4f7">
+                                                <strong>Comment</strong>
+                                            </th>
+                                        </tr>
+                                        <tr ng-repeat="aDetail in BehaviourList">
+                                            <td class="t-cell-left-star"> {{aDetail.DefinitionGroup}} </td>
+                                            <td class="t-cell-left-star" style="white-space:pre-wrap; word-wrap:break-word;"> {{aDetail.QuestionGroup}} </td>
+                                            <!-- Rating -->
+                                            <td class="middle">
+                                                <a ng-click="SaveRating(aDetail)">
+                                                    <jk-rating-stars rating="aDetail.SelfAppraisalRating" read-only="SaOrReview.FlagSelfAppraisal"></jk-rating-stars>
+                                                </a>
+                                            </td>
+                                            <!-- Comment -->
+                                            <td class="text-center middle">
+                                                <span class="glyphicon glyphicon-edit icon-lg-success" ng-show="!SaOrReview.FlagSelfAppraisal" data-toggle="modal" data-target="#commentModal" ng-click="OpenModal(aDetail)"></span>
+                                                <span class="glyphicon glyphicon-book icon-lg" ng-show="SaOrReview.FlagSelfAppraisal" data-toggle="modal" data-target="#commentModal" ng-click="OpenModal(aDetail)"></span>
+                                            </td>
+                                            <!-- Manager Rating -->
+                                            <td class="middle">
+                                                <a ng-show="SaOrReview.FlagReview" ng-click="SaveManagerRating()">
+                                                    <jk-rating-stars rating="aDetail.ReviewRating" read-only="SaOrReview.FlagReview"></jk-rating-stars>
+                                                </a>
+                                            </td>
+                                            <!-- Manager Comment -->
+                                            <td class="text-center middle">
+                                                <span class="glyphicon glyphicon-book icon-lg" ng-show="SaOrReview.FlagReview" data-toggle="modal" data-target="#commentModalManager" ng-click="OpenModalManager(aDetail)"></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-actions noborder pull-right" style="margin-right: 7px; margin-top: 10px" ng-show="!SaOrReview.FlagSelfAppraisal" block-ui="rvwSaveBlock">
+        <button type="button" class="btn btn-lg purple box-shadow--8dp" ng-click="LockSaOrReview()">Lock & Submit</button>
+    </div>
+</div>
+<div class="modal fade" id="commentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog" style="width:900px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title sbold">{{ModalTitle}}</h4>
+            </div>
+            <div class="modal-body">
+                {{ModalQuestion}}
+                <p />
+                <textarea class="form-control" rows="10" maxlength="1000" ng-model="ModalComment" placeholder="Comment (maximum 1000 characters)" ng-disabled="SaOrReview.FlagSelfAppraisal" />
+            </div>
+            <div class="modal-footer" ng-show="!SaOrReview.FlagSelfAppraisal">
+                <button type="button" class="btn green" ng-click="SaveComment()">Save & Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="commentModalManager" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog" style="width:900px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title sbold">{{ModalTitleManager}}</h4>
+            </div>
+            <div class="modal-body">
+                {{ModalQuestionManager}}
+                <p />
+                <textarea class="form-control" rows="10" maxlength="1000" ng-model="ModalCommentManager" placeholder="Comment (maximum 1000 characters)" ng-disabled="true" />
+            </div>
+            <!--<div class="modal-footer" ng-show="SaOrReview.RatingType === 'Review' && !SaOrReview.FlagReview">
+                <button type="button" class="btn green" ng-click="SaveCommentManager()">Save & Close</button>
+            </div>-->
+        </div>
+    </div>
+</div>

@@ -178,7 +178,6 @@
                                         </div>
 
 
-
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4">
@@ -315,14 +314,23 @@
                                                 <span class="help-block" style="display: block;" ng-if="frm.Division.$error.required && frm.Division.$touched">Division is required</span>
                                             </div>
                                         </div>
+
                                     </div>
-
-
-
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.IdCard.$touched && frm.IdCard.$invalid }" data-toggle="tooltip" data-placement="bottom" title="IdCard">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Id Card" name="IdCard" ng-model="entity.IdCard" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-file-image-o font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.IdCard.$error.required && frm.IdCard.$touched">IdCard is required</span>
+                                                <span class="help-block" ng-if="frm.IdCard.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
-
-
                             </div>
 
 
@@ -410,7 +418,7 @@
                                                         <tr class="hoverHand searchRow" ng-repeat="education in educationList">
                                                             <td style="text-align:center">{{education.ExamType}}</td>
                                                             <td style="text-align:center">{{education.BoardName}}</td>
-                                                            <td style="text-align:center">{{education.PassingYear}}</td>
+                                                            <td style="text-align:center"> {{education.PassingYear}}</td>
                                                             <td style="text-align:center">{{education.GpaOrClass}}</td>
                                                             <td style="text-align:center">{{education.InstituteName}}</td>
                                                             <td style="text-align:center">{{education.InstituteAddress}}</td>
@@ -444,7 +452,8 @@
                                             </select>
                                             <span class="help-block" style="display:block;" ng-if="frm.Program.$error.required && frm.Program.$touched">Program is required</span>
                                         </div>
-
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group" ng-class="{ 'has-error' : frm.RegularAmount.$touched && frm.RegularAmount.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Regular Amount">
                                                 <div class="input-group">
@@ -486,22 +495,16 @@
 <div class="form-actions noborder pull-right" style="margin-top: 10px; margin-bottom: 10px" ng-show="!SaOrReview.FlagSelfAppraisal" block-ui="rvwSaveBlock">
     <button type="button" class="btn btn-lg purple box-shadow--8dp" ng-disabled="frm.$invalid" ng-click="post('save')">Lock & Submit</button><!--LockSaOrReview()-->
 </div>
-
-<!--Personal Information-->
-
-<div class="row" style="padding:15px 0px ">
+<div class="row" style="padding: 15px 0px">
     <div class="col-md-12">
         <div class="portlet box purple">
             <div class="portlet-title sbold">
                 <div class="caption no-outline">
-                    <i class="fa fa-money" style="font-size: 20px; color:white"></i>Personal Information
+                    <i class="fa fa-money" style="font-size: 20px; color:white"></i>Student Information
                 </div>
             </div>
             <div class="portlet-body-grid ">
                 <div class="row">
-                    <!--<div class="col-md-2" style="padding:5px 15px !important">
-                        <input type="button" class="form-control text-center btn btn-success" value="Search" ng-click="Search()" ng-disabled="!cmbStudentSearch || !entity.FromDate || !entity.ToDate" />
-                    </div>-->
                     <div class="form-group" style="padding:5px 15px !important">
                         <div class="table-outer">
                             <table class="responstable table-hover">
@@ -519,6 +522,7 @@
                                         <td class="text-center">{{item.MobileNo}}</td>
                                         <td class="text-center">{{item.Email}}</td>
                                         <td class="text-center">{{item.HoldingNoAndRoad}}</td>
+
                                     </tr>
                                 </tbody>
                             </table>
