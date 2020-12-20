@@ -8,6 +8,7 @@
     $scope.entityListPaged = [];
     $scope.entryBlock = blockUI.instances.get('entryBlock');
     $scope.lsitBlock = blockUI.instances.get('lsitBlock');
+    getStudentInfoList();
     clear();
     $scope.educationList = [];
     dateToday = new Date();
@@ -65,6 +66,28 @@
             alertify.log('Unknown server error', 'error', '10000');
         });
     };
+
+    function getStudentInfoList() {
+        var where = "IsActive = 1";
+        $http({
+            url: '/Admission/GetDynamic?where=' + where + '&orderBy=StudentId',
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        }).success(function (data) {
+            if (data.length) {
+                angular.forEach(data, function (obj) {
+                })
+                $scope.entityList = data;
+                $scope.total_count = data.length;
+
+            }
+            else {
+                alertify.log('System could not retrive information, please refresh page', 'error', '10000');
+            }
+        }).error(function (data2) {
+            alertify.log('Unknown server error', 'error', '10000');
+        });
+    }
 
     function submitRequest(trnType) {
         var params = JSON.stringify({ obj: $scope.entity, transactionType: trnType, educationList: $scope.educationList });

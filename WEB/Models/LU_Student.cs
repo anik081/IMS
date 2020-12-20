@@ -34,7 +34,9 @@ namespace QtImsEntity
 		public string PostOffice { get; set; }
 		public string Upazila { get; set; }
 		public string District { get; set; }
-		public string Division { get; set; }
+        public string RegularAmount { get; set; }
+        public string CommittedAmount { get; set; }
+        public string Division { get; set; }
 		public Int32 UpdateBy { get; set; }
 		public DateTime UpdateDate { get; set; }
 	}

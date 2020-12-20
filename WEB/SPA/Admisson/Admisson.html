@@ -178,6 +178,7 @@
                                         </div>
 
 
+
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4">
@@ -316,7 +317,12 @@
                                         </div>
                                     </div>
 
+
+
                                 </div>
+
+
+
                             </div>
 
 
@@ -404,7 +410,7 @@
                                                         <tr class="hoverHand searchRow" ng-repeat="education in educationList">
                                                             <td style="text-align:center">{{education.ExamType}}</td>
                                                             <td style="text-align:center">{{education.BoardName}}</td>
-                                                            <td style="text-align:center"> {{education.PassingYear}}</td>
+                                                            <td style="text-align:center">{{education.PassingYear}}</td>
                                                             <td style="text-align:center">{{education.GpaOrClass}}</td>
                                                             <td style="text-align:center">{{education.InstituteName}}</td>
                                                             <td style="text-align:center">{{education.InstituteAddress}}</td>
@@ -426,17 +432,42 @@
 
                                 <div class="form-body">
                                     <div class="row">
-                                        <div class="col-md-3" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Batch.$invalid && frm.Batch.$touched}" data-toggle="tooltip" data-placement="bottom" title="Batch">
+                                        <div class="col-md-6" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Batch.$invalid && frm.Batch.$touched}" data-toggle="tooltip" data-placement="bottom" title="Batch">
                                             <select class="bs-select form-control" name="Batch" style="width: 100%" required ng-model="cmbBatch" ng-options="batch.BatchName for batch in batchList track by batch.BatchId " ng-change="entity.BatchNo=cmbBatch.BatchId">
                                                 <option value="">-- Batch --</option>
                                             </select>
                                             <span class="help-block" style="display:block;" ng-if="frm.Batch.$error.required && frm.Batch.$touched">Batch is required</span>
                                         </div>
-                                        <div class="col-md-4" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Program.$invalid && frm.Program.$touched}" data-toggle="tooltip" data-placement="bottom" title="Program">
+                                        <div class="col-md-6" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Program.$invalid && frm.Program.$touched}" data-toggle="tooltip" data-placement="bottom" title="Program">
                                             <select class="bs-select form-control" name="Program" style="width: 100%" required ng-model="cmbProgram" ng-options="program.ProgramTitle for program in programList track by program.ProgramId " ng-change="entity.ProgramId=cmbProgram.ProgramId">
                                                 <option value="">-- Program --</option>
                                             </select>
                                             <span class="help-block" style="display:block;" ng-if="frm.Program.$error.required && frm.Program.$touched">Program is required</span>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.RegularAmount.$touched && frm.RegularAmount.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Regular Amount">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Regular Amount" name="RegularAmount" ng-model="entity.RegularAmount" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-industry font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.RegularAmount.$error.required && frm.RegularAmount.$touched">Regular Amount is required</span>
+                                                <span class="help-block" ng-if="frm.RegularAmount.$error.maxlength">50 Character Max</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group" ng-class="{ 'has-error' : frm.CommittedAmount.$touched && frm.CommittedAmount.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Committed Amount">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Committed Amount" name="CommittedAmount" ng-model="entity.CommittedAmount" maxlength="51" ng-maxlength="50" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-user font-red"></i>
+                                                    </span>
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="frm.CommittedAmount.$error.required && frm.CommittedAmount.$touched">Committed Amount is required</span>
+                                                <span class="help-block" ng-if="frm.CommittedAmount.$error.maxlength">50 Character Max</span>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -452,6 +483,49 @@
         </form>
     </div>
 </div>
-<div class="form-actions noborder pull-right" style="margin-right: 7px; margin-top: 10px" ng-show="!SaOrReview.FlagSelfAppraisal" block-ui="rvwSaveBlock">
+<div class="form-actions noborder pull-right" style="margin-top: 10px; margin-bottom: 10px" ng-show="!SaOrReview.FlagSelfAppraisal" block-ui="rvwSaveBlock">
     <button type="button" class="btn btn-lg purple box-shadow--8dp" ng-disabled="frm.$invalid" ng-click="post('save')">Lock & Submit</button><!--LockSaOrReview()-->
+</div>
+
+<!--Personal Information-->
+
+<div class="row" style="padding:15px 0px ">
+    <div class="col-md-12">
+        <div class="portlet box purple">
+            <div class="portlet-title sbold">
+                <div class="caption no-outline">
+                    <i class="fa fa-money" style="font-size: 20px; color:white"></i>Personal Information
+                </div>
+            </div>
+            <div class="portlet-body-grid ">
+                <div class="row">
+                    <!--<div class="col-md-2" style="padding:5px 15px !important">
+                        <input type="button" class="form-control text-center btn btn-success" value="Search" ng-click="Search()" ng-disabled="!cmbStudentSearch || !entity.FromDate || !entity.ToDate" />
+                    </div>-->
+                    <div class="form-group" style="padding:5px 15px !important">
+                        <div class="table-outer">
+                            <table class="responstable table-hover">
+                                <tbody>
+                                    <tr class="t-head" style="font-size: 14px !important;">
+                                        <th class="sbold">Name</th>
+                                        <th class="sbold text-center" data-th="Details"><span>Mobile No</span></th>
+                                        <th class="sbold text-center">Email</th>
+                                        <th class="sbold text-center">Address</th>
+
+
+                                    </tr>
+                                    <tr dir-paginate="item in entityList | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count" ">
+                                        <td class="text-center">{{item.FullName}}</td>
+                                        <td class="text-center">{{item.MobileNo}}</td>
+                                        <td class="text-center">{{item.Email}}</td>
+                                        <td class="text-center">{{item.HoldingNoAndRoad}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

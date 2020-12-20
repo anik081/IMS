@@ -88,7 +88,7 @@ namespace QtImsDAL
 			string ret = string.Empty;
 			try
 			{
-				Parameters[] colparameters = new Parameters[33]{
+				Parameters[] colparameters = new Parameters[35]{
 				new Parameters("@paramStudentId", _LU_Student.StudentId, DbType.Int32, ParameterDirection.Input),
 				new Parameters("@paramCampusId", _LU_Student.CampusId, DbType.Int32, ParameterDirection.Input),
 				new Parameters("@paramProgramId", _LU_Student.ProgramId, DbType.Int32, ParameterDirection.Input),
@@ -119,7 +119,9 @@ namespace QtImsDAL
 				new Parameters("@paramUpazila", _LU_Student.Upazila, DbType.String, ParameterDirection.Input),
 				new Parameters("@paramDistrict", _LU_Student.District, DbType.String, ParameterDirection.Input),
 				new Parameters("@paramDivision", _LU_Student.Division, DbType.String, ParameterDirection.Input),
-				new Parameters("@paramUpdateBy", _LU_Student.UpdateBy, DbType.Int32, ParameterDirection.Input),
+                new Parameters("@paramRegularAmount", _LU_Student.RegularAmount, DbType.String, ParameterDirection.Input),
+                new Parameters("@paramCommittedAmount", _LU_Student.CommittedAmount, DbType.String, ParameterDirection.Input),
+                new Parameters("@paramUpdateBy", _LU_Student.UpdateBy, DbType.Int32, ParameterDirection.Input),
 				new Parameters("@paramUpdateDate", _LU_Student.UpdateDate, DbType.DateTime, ParameterDirection.Input),
 				new Parameters("@paramTransactionType", transactionType, DbType.String, ParameterDirection.Input)
 				};
