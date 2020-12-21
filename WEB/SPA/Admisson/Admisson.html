@@ -505,6 +505,19 @@
             </div>
             <div class="portlet-body-grid ">
                 <div class="row">
+                    <div class="col-md-6" style="padding:5px 15px !important">
+                        <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="Student Name">
+                            <div class="input-group">
+                                <input type="text" class="form-control text-center" id="txtFocus" placeholder="Name Search" name="StudentName" ng-model="search.FullName" maxlength="51" ng-maxlength="50" required>
+                                <span class="input-group-addon">
+                                    <i class="fa fa-user font-red"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="padding:5px 15px !important">
+                        <button type="submit" class="btn btn-lg btn-success box-shadow--8dp" style="height:35px;text-align:center;line-height:5px" ng-disabled="!search.FullName" ng-click="search()"> Search</button>
+                    </div>
                     <div class="form-group" style="padding:5px 15px !important">
                         <div class="table-outer">
                             <table class="responstable table-hover">
@@ -517,7 +530,7 @@
 
 
                                     </tr>
-                                    <tr dir-paginate="item in entityList | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count" ">
+                                    <tr dir-paginate="item in entityListPaged | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count" ng-click="rowClick(item)" ng-class="{ 'rowSelected' : entity.StudentId === item.StudentId}">
                                         <td class="text-center">{{item.FullName}}</td>
                                         <td class="text-center">{{item.MobileNo}}</td>
                                         <td class="text-center">{{item.Email}}</td>
@@ -526,9 +539,20 @@
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <div class="row pagination-control" ng-show="total_count>PerPage">
+                                <span style="display: inline-block; vertical-align: middle; margin-top: -7px; font-weight: bold;">
+                                    <dir-pagination-controls max-size="8"
+                                                             direction-links="true"
+                                                             boundary-links="true"
+                                                             on-page-change="GetPaged(newPageNumber)" style="text-align:center; margin-top:0px !important">
+                                    </dir-pagination-controls>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
