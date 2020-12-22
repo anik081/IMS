@@ -329,6 +329,11 @@
                                                 <span class="help-block" ng-if="frm.IdCard.$error.maxlength">50 Character Max</span>
                                             </div>
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <input id="uploadEditorImage" accept="image/x-png" type="file" multiple onchange="angular.element(this).scope().getFiles(this.files)" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -424,7 +429,7 @@
                                                             <td style="text-align:center">{{education.InstituteAddress}}</td>
                                                             <td>
                                                                 <div class="form-actions">
-                                                                    <button type="button" class="btn btn-sm purple" ng-click="removeEducation($index)">Remove</button><!--LockSaOrReview()-->
+                                                                    <button type="button" class="btn btn-sm purple" ng-click="removeEducation($index);deleteEdu(education.StudentEducationId)">Remove</button><!--LockSaOrReview()-->
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -493,7 +498,9 @@
     </div>
 </div>
 <div class="form-actions noborder pull-right" style="margin-top: 10px; margin-bottom: 10px" ng-show="!SaOrReview.FlagSelfAppraisal" block-ui="rvwSaveBlock">
-    <button type="button" class="btn btn-lg purple box-shadow--8dp" ng-disabled="frm.$invalid" ng-click="post('save')">Lock & Submit</button><!--LockSaOrReview()-->
+    <button type="button" class="btn btn-lg purple box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-disabled="frm.$invalid" ng-click="post('save')">Lock & Submit</button><!--LockSaOrReview()-->
+    <button type="button" class="btn btn-lg btn-danger box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-show="entity.StudentId > 0" ng-click="post('delete')">Delete</button>
+    <button type="button" class="btn btn-lg btn-default box-shadow--8dp" style="min-width:90px !important; margin-bottom: 5px" ng-click="resetForm()">Reset</button>
 </div>
 <div class="row" style="padding: 15px 0px">
     <div class="col-md-12">
@@ -508,7 +515,7 @@
                     <div class="col-md-6" style="padding:5px 15px !important">
                         <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="Student Name">
                             <div class="input-group">
-                                <input type="text" class="form-control text-center" id="txtFocus" placeholder="Name Search" name="StudentName" ng-model="search.FullName" maxlength="51" ng-maxlength="50" required>
+                                <input type="text" class="form-control text-center" id="txtFocus" placeholder="Name or Mobile Search" name="StudentName" ng-model="search.FullName" maxlength="51" ng-maxlength="50" required>
                                 <span class="input-group-addon">
                                     <i class="fa fa-user font-red"></i>
                                 </span>

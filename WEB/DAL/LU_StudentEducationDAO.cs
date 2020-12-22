@@ -115,5 +115,31 @@ namespace QtImsDAL
 			}
 			return ret;
 		}
-	}
+
+        public string StudentEducationDelete(string where)
+        {
+            string ret = string.Empty;
+            try
+            {
+                Parameters[] colparameters = new Parameters[1]{
+                
+                new Parameters("@paramWhere", where, DbType.String, ParameterDirection.Input)
+                };
+                dbExecutor.ManageTransaction(TransactionType.Open);
+                ret = dbExecutor.ExecuteScalarString(true, CommandType.StoredProcedure, "wsp_LU_StudentEducationRemove_Post", colparameters, true);
+                dbExecutor.ManageTransaction(TransactionType.Commit);
+            }
+            catch (DBConcurrencyException except)
+            {
+                dbExecutor.ManageTransaction(TransactionType.Rollback);
+                throw except;
+            }
+            catch (Exception ex)
+            {
+                dbExecutor.ManageTransaction(TransactionType.Rollback);
+                throw ex;
+            }
+            return ret;
+        }
+    }
 }

@@ -1,4 +1,4 @@
-﻿app.controller("AdmissonCtrl", function ($scope, $cookieStore, $window, $location, $http, blockUI) {
+﻿app.controller("AdmissonCtrl", function ($scope, $cookieStore, $window, $location, $http, blockUI, $filter) {
 
     $scope.DefaultPerPage =5;
     $scope.currentPage = 1;
@@ -11,6 +11,7 @@
     getList();
     clear();
     $scope.educationList = [];
+    $scope.educationDeleteList = [];
     dateToday = new Date();
     var year = dateToday.getFullYear();
     getProgramTypeActive();
@@ -22,6 +23,7 @@
     }
     function clear() {
         $scope.entity = { StudentId: 0 };
+        $scope.entityEducation = { StudentEducationId: 0 };
 
         $("#txtFocus").focus();
     };
@@ -62,7 +64,17 @@
         }).success(function (data) {
 
             if (data.length) {
+
                 $scope.entityList = data;
+                angular.forEach(data, function (obj) {
+                    var res = obj.DateOfBirth.substring(0, 5);
+                    if (res == "/Date") {
+                        var parsedDate = new Date(parseInt(obj.DateOfBirth.substr(6)));
+                        var date = ($filter('date')(parsedDate, 'MMM dd, yyyy')).toString();
+                        obj.DateOfBirth = date;
+                    }
+
+                })
                 $scope.total_count = data.length;
                 $scope.total_pages = $scope.total_count / $scope.DefaultPerPage;
                 var begin = ($scope.PerPage * ($scope.currentPage - 1));
@@ -149,6 +161,25 @@
 
 
     };
+    function deleteEducationList(trnType) {
+        var params = JSON.stringify({ educationDeleteList: $scope.educationDeleteList , transactionType: trnType});
+
+        $http.post('/Admission/DeleteEducationList', params).success(function (data) {
+            $scope.entryBlock.start();
+            if (data != '') {
+
+            }
+            else {
+                $scope.entryBlock.stop();
+                alertify.log('System could not execute the operation.', 'error', '10000');
+            }
+        }).error(function () {
+            $scope.entryBlock.stop();
+            alertify.log('Unknown server error', 'error', '10000');
+        });
+
+
+    };
     $scope.rowClick = function (obj) {
         $scope.entity = obj;
         $('#txtFocus').focus();
@@ -170,6 +201,7 @@
                 if (trnType === 'save') {
                     trnType = $scope.entity.StudentId === 0 ? "INSERT" : "UPDATE";
                     submitRequest(trnType);
+                    deleteEducationList("DELETE");
                 }
 
                 else {
@@ -798,11 +830,12 @@
 
     $scope.resetForm = function () {
         clear();
+        $scope.educationList = [];
         $scope.frm.$setUntouched();
         $scope.frm.$setPristine();
     };
     $scope.search = function () {
-        var where = "FullName LIKE '%25" + $scope.search.FullName + "%'";
+        var where = "FullName = '"+ $scope.search.FullName + "' OR MobileNo = '" + $scope.search.FullName + "'" ;
         $http({
             url: '/Admission/GetDynamic?where=' + where + '&orderBy= StudentId',
             method: 'GET',
@@ -833,10 +866,37 @@
         obj.GpaOrClass = $scope.entityEducation.GpaOrClass;
         obj.InstituteName = $scope.entityEducation.InstituteName;
         obj.InstituteAddress = $scope.entityEducation.InstituteAddress;
+        obj.StudentEducationId = 0;
         $scope.educationList.push(obj);
     }
     $scope.removeEducation = function (element) {
         $scope.educationLis = $scope.educationList.splice(element, 1);
+
+    }
+    $scope.deleteEdu = function (item) {
+        $scope.educationDeleteList.push(item);
+        var a = $scope.educationDeleteList;
     }
 
+    $scope.getFiles = function (file) {
+        $scope.data = new FormData();
+        var files = $("#uploadEditorImage").get(0).files;
+        if (files.length > 0) {
+            $scope.data.append("HelpSectionImages", files[0]);
+        }
+        $.ajax({
+            url: "/Admission/ImageFile",
+            type: "POST",
+            processData: false,
+            contentType: false,
+            data: $scope.data,
+            success: function (response) {
+            },
+            error: function (er) {
+                alert(er);
+            }
+
+        });
+
+    }
 });
