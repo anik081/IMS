@@ -329,6 +329,11 @@
                                                 <span class="help-block" ng-if="frm.IdCard.$error.maxlength">50 Character Max</span>
                                             </div>
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <input id="uploadEditorImage" accept="image/x-png" type="file" multiple onchange="angular.element(this).scope().getFiles(this.files)" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -409,7 +414,6 @@
                                                             <th class="sbold">Exam</th>
                                                             <th class="sbold text-center" data-th="Details"><span>Board</span></th>
                                                             <th class="sbold text-center">Passing Year</th>
-
                                                             <th class="sbold text-center">GPA</th>
                                                             <th class="sbold text-center">Institute</th>
                                                             <th class="sbold text-center">Institute Address</th>
@@ -424,7 +428,7 @@
                                                             <td style="text-align:center">{{education.InstituteAddress}}</td>
                                                             <td>
                                                                 <div class="form-actions">
-                                                                    <button type="button" class="btn btn-sm purple" ng-click="removeEducation($index)">Remove</button><!--LockSaOrReview()-->
+                                                                    <button type="button" class="btn btn-sm purple" ng-click="removeEducation($index);deleteEdu(education.StudentEducationId)">Remove</button><!--LockSaOrReview()-->
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -493,7 +497,9 @@
     </div>
 </div>
 <div class="form-actions noborder pull-right" style="margin-top: 10px; margin-bottom: 10px" ng-show="!SaOrReview.FlagSelfAppraisal" block-ui="rvwSaveBlock">
-    <button type="button" class="btn btn-lg purple box-shadow--8dp" ng-disabled="frm.$invalid" ng-click="post('save')">Lock & Submit</button><!--LockSaOrReview()-->
+    <button type="button" class="btn btn-lg purple box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-disabled="frm.$invalid" ng-click="post('save')">Lock & Submit</button><!--LockSaOrReview()-->
+    <button type="button" class="btn btn-lg btn-danger box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-show="entity.StudentId > 0" ng-click="post('delete')">Delete</button>
+    <button type="button" class="btn btn-lg btn-default box-shadow--8dp" style="min-width:90px !important; margin-bottom: 5px" ng-click="resetForm()">Reset</button>
 </div>
 <div class="row" style="padding: 15px 0px">
     <div class="col-md-12">
@@ -505,20 +511,33 @@
             </div>
             <div class="portlet-body-grid ">
                 <div class="row">
+                    <div class="col-md-6" style="padding:5px 15px !important">
+                        <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="Student Name">
+                            <div class="input-group">
+                                <input type="text" class="form-control text-center" id="txtFocus" placeholder="Name or Mobile Search" name="StudentName" ng-model="search.FullName" maxlength="51" ng-maxlength="50" required>
+                                <span class="input-group-addon">
+                                    <i class="fa fa-user font-red"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="padding:5px 15px !important">
+                        <button type="submit" class="btn btn-lg btn-success box-shadow--8dp" style="height:35px;text-align:center;line-height:5px" ng-disabled="!search.FullName" ng-click="search()"> Search</button>
+                    </div>
                     <div class="form-group" style="padding:5px 15px !important">
                         <div class="table-outer">
                             <table class="responstable table-hover">
                                 <tbody>
                                     <tr class="t-head" style="font-size: 14px !important;">
-                                        <th class="sbold">Name</th>
-                                        <th class="sbold text-center" data-th="Details"><span>Mobile No</span></th>
+                                        <th class="sbold  text-center" data-th="Details">Name</th>
+                                        <th class="sbold text-center"><span>Mobile No</span></th>
                                         <th class="sbold text-center">Email</th>
                                         <th class="sbold text-center">Address</th>
 
 
                                     </tr>
-                                    <tr dir-paginate="item in entityList | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count" ">
-                                        <td class="text-center">{{item.FullName}}</td>
+                                    <tr dir-paginate="item in entityListPaged | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count" ng-click="rowClick(item)" ng-class="{ 'rowSelected' : entity.StudentId === item.StudentId}">
+                                        <td class="text-center"style="padding:25px">{{item.FullName}}</td>
                                         <td class="text-center">{{item.MobileNo}}</td>
                                         <td class="text-center">{{item.Email}}</td>
                                         <td class="text-center">{{item.HoldingNoAndRoad}}</td>
@@ -526,9 +545,20 @@
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <div class="row pagination-control" ng-show="total_count>PerPage">
+                                <span style="display: inline-block; vertical-align: middle; margin-top: -7px; font-weight: bold;">
+                                    <dir-pagination-controls max-size="8"
+                                                             direction-links="true"
+                                                             boundary-links="true"
+                                                             on-page-change="GetPaged(newPageNumber)" style="text-align:center; margin-top:0px !important">
+                                    </dir-pagination-controls>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

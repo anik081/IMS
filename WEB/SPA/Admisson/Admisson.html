@@ -414,7 +414,6 @@
                                                             <th class="sbold">Exam</th>
                                                             <th class="sbold text-center" data-th="Details"><span>Board</span></th>
                                                             <th class="sbold text-center">Passing Year</th>
-
                                                             <th class="sbold text-center">GPA</th>
                                                             <th class="sbold text-center">Institute</th>
                                                             <th class="sbold text-center">Institute Address</th>
@@ -530,15 +529,15 @@
                             <table class="responstable table-hover">
                                 <tbody>
                                     <tr class="t-head" style="font-size: 14px !important;">
-                                        <th class="sbold">Name</th>
-                                        <th class="sbold text-center" data-th="Details"><span>Mobile No</span></th>
+                                        <th class="sbold  text-center" data-th="Details">Name</th>
+                                        <th class="sbold text-center"><span>Mobile No</span></th>
                                         <th class="sbold text-center">Email</th>
                                         <th class="sbold text-center">Address</th>
 
 
                                     </tr>
                                     <tr dir-paginate="item in entityListPaged | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count" ng-click="rowClick(item)" ng-class="{ 'rowSelected' : entity.StudentId === item.StudentId}">
-                                        <td class="text-center">{{item.FullName}}</td>
+                                        <td class="text-center"style="padding:25px">{{item.FullName}}</td>
                                         <td class="text-center">{{item.MobileNo}}</td>
                                         <td class="text-center">{{item.Email}}</td>
                                         <td class="text-center">{{item.HoldingNoAndRoad}}</td>
