@@ -414,6 +414,7 @@
                                                             <th class="sbold">Exam</th>
                                                             <th class="sbold text-center" data-th="Details"><span>Board</span></th>
                                                             <th class="sbold text-center">Passing Year</th>
+
                                                             <th class="sbold text-center">GPA</th>
                                                             <th class="sbold text-center">Institute</th>
                                                             <th class="sbold text-center">Institute Address</th>
@@ -497,7 +498,7 @@
     </div>
 </div>
 <div class="form-actions noborder pull-right" style="margin-top: 10px; margin-bottom: 10px" ng-show="!SaOrReview.FlagSelfAppraisal" block-ui="rvwSaveBlock">
-    <button type="button" class="btn btn-lg purple box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-disabled="frm.$invalid" ng-click="post('save')">Lock & Submit</button><!--LockSaOrReview()-->
+    <button type="button" class="btn btn-lg purple box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-disabled="!entity.FullName || !entity.MobileNo || !entity.Email || !entity.FatherName || !entity.FatherOccupation || !entity.MotherName || !entity.MotherOccupation || !entity.GuardianName || !entity.RelationWithGuardian || !entity.GuardianMobileNo || !cmbPhotoIdType || !entity.PhotoIdNo || !entity.DateOfBirth || !entity.PlaceofBirth || !cmbGender || !entity.HoldingNoAndRoad || !entity.PoliceStation || !entity.PostOffice || !entity.PostOffice || !entity.Upazila || !cmbDistrict || !cmbDivision || !entity.IdCard" ng-click="post('save')">Lock & Submit</button><!--LockSaOrReview()-->
     <button type="button" class="btn btn-lg btn-danger box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-show="entity.StudentId > 0" ng-click="post('delete')">Delete</button>
     <button type="button" class="btn btn-lg btn-default box-shadow--8dp" style="min-width:90px !important; margin-bottom: 5px" ng-click="resetForm()">Reset</button>
 </div>
@@ -529,15 +530,15 @@
                             <table class="responstable table-hover">
                                 <tbody>
                                     <tr class="t-head" style="font-size: 14px !important;">
-                                        <th class="sbold  text-center" data-th="Details">Name</th>
-                                        <th class="sbold text-center"><span>Mobile No</span></th>
+                                        <th class="sbold">Name</th>
+                                        <th class="sbold text-center" data-th="Details"><span>Mobile No</span></th>
                                         <th class="sbold text-center">Email</th>
                                         <th class="sbold text-center">Address</th>
 
 
                                     </tr>
                                     <tr dir-paginate="item in entityListPaged | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count" ng-click="rowClick(item)" ng-class="{ 'rowSelected' : entity.StudentId === item.StudentId}">
-                                        <td class="text-center"style="padding:25px">{{item.FullName}}</td>
+                                        <td class="text-center">{{item.FullName}}</td>
                                         <td class="text-center">{{item.MobileNo}}</td>
                                         <td class="text-center">{{item.Email}}</td>
                                         <td class="text-center">{{item.HoldingNoAndRoad}}</td>

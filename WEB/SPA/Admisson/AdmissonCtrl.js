@@ -1,6 +1,6 @@
 ﻿app.controller("AdmissonCtrl", function ($scope, $cookieStore, $window, $location, $http, blockUI, $filter) {
 
-    $scope.DefaultPerPage =5;
+    $scope.DefaultPerPage = 5;
     $scope.currentPage = 1;
     $scope.PerPage = $scope.DefaultPerPage;
     $scope.total_count = 0;
@@ -50,10 +50,10 @@
                 $scope.educationList = data;
             }
             else {
-               // alertify.log('System could not retrive information, please refresh page', 'error', '10000');
+                // alertify.log('System could not retrive information, please refresh page', 'error', '10000');
             }
         }).error(function (data2) {
-           // alertify.log('Unknown server error', 'error', '10000');
+            // alertify.log('Unknown server error', 'error', '10000');
         });
     }
     function getList() {
@@ -162,7 +162,7 @@
 
     };
     function deleteEducationList(trnType) {
-        var params = JSON.stringify({ educationDeleteList: $scope.educationDeleteList , transactionType: trnType});
+        var params = JSON.stringify({ educationDeleteList: $scope.educationDeleteList, transactionType: trnType });
 
         $http.post('/Admission/DeleteEducationList', params).success(function (data) {
             $scope.entryBlock.start();
@@ -278,12 +278,12 @@
         "DivisionId": "8",
         "DivisionName": "Rangpur"
 
-        },
-        {
-            "DivisionId": "8",
-            "DivisionName": "Rangpur"
+    },
+    {
+        "DivisionId": "8",
+        "DivisionName": "Rangpur"
 
-        }
+    }
     ]
     $scope.districtList = [{
         "DistrictId": "1",
@@ -664,86 +664,106 @@
     }]
     $scope.batchList = [{
         "BatchId": "1",
-        "BatchName": "Batch-11"
+        "BatchName": "Batch-1"
     }, {
         "BatchId": "2",
-        "BatchName": "Batch-12"
+        "BatchName": "Batch-2"
     }, {
         "BatchId": "3",
-        "BatchName": "Batch-13"
+        "BatchName": "Batch-3"
 
     }, {
         "BatchId": "4",
-        "BatchName": "Batch-14"
+        "BatchName": "Batch-4"
     }, {
         "BatchId": "5",
+        "BatchName": "Batch-5"
+    },
+    {
+        "BatchId": "6",
+        "BatchName": "Batch-6"
+    }, {
+        "BatchId": "7",
+        "BatchName": "Batch-7"
+    }, {
+        "BatchId": "8",
+        "BatchName": "Batch-8"
+
+    }, {
+        "BatchId": "9",
+        "BatchName": "Batch-9"
+    }, {
+        "BatchId": "10",
+        "BatchName": "Batch-10"
+    },
+    {
+        "BatchId": "11",
+        "BatchName": "Batch-11"
+    }, {
+        "BatchId": "12",
+        "BatchName": "Batch-12"
+    }, {
+        "BatchId": "13",
+        "BatchName": "Batch-13"
+
+    }, {
+        "BatchId": "14",
+        "BatchName": "Batch-14"
+    }, {
+        "BatchId": "15",
         "BatchName": "Batch-15"
     }, {
-        "BatchId": "6",
+        "BatchId": "16",
         "BatchName": "Batch-16"
 
     },
     {
-        "BatchId": "7",
+        "BatchId": "17",
         "BatchName": "Batch-17"
     }, {
-        "BatchId": "8",
+        "BatchId": "18",
         "BatchName": "Batch-18"
     }, {
-        "BatchId": "9",
+        "BatchId": "19",
         "BatchName": "Batch-19"
 
     }, {
-        "BatchId": "10",
+        "BatchId": "20",
         "BatchName": "Batch-20"
     }, {
-        "BatchId": "11",
+        "BatchId": "21",
         "BatchName": "Batch-21"
     }, {
-        "BatchId": "12",
+        "BatchId": "22",
         "BatchName": "Batch-22"
 
     }, {
-        "BatchId": "13",
+        "BatchId": "23",
         "BatchName": "Batch-23"
     }, {
-        "BatchId": "114",
+        "BatchId": "24",
         "BatchName": "Batch-24"
     }, {
-        "BatchId": "15",
+        "BatchId": "25",
         "BatchName": "Batch-25"
 
     }, {
-        "BatchId": "16",
+        "BatchId": "26",
         "BatchName": "Batch-26"
     }, {
-        "BatchId": "17",
+        "BatchId": "27",
         "BatchName": "Batch-27"
     }, {
-        "BatchId": "18",
+        "BatchId": "28",
         "BatchName": "Batch-28"
 
     },
     {
-        "BatchId": "19",
+        "BatchId": "29",
         "BatchName": "Batch-29"
     }, {
-        "BatchId": "20",
+        "BatchId": "30",
         "BatchName": "Batch-30"
-    }, {
-        "BatchId": "21",
-        "BatchName": "Batch-31"
-
-    }, {
-        "BatchId": "22",
-        "BatchName": "Batch-32"
-    }, {
-        "BatchId": "23",
-        "BatchName": "Batch-33"
-    }, {
-        "BatchId": "24",
-        "BatchName": "Batch-34"
-
     }]
     function getProgramTypeActive() {
         var where = "IsActive = 1";
@@ -802,8 +822,12 @@
 
         },
         {
-            "BoardId": "8",
+            "BoardId": "9",
             "BoardName": "Dinajpur"
+        },
+        {
+            "BoardId": "10",
+            "BoardName": "Comilla"
         }
     ]
     //$scope.yearList = [{
@@ -835,7 +859,7 @@
         $scope.frm.$setPristine();
     };
     $scope.search = function () {
-        var where = "FullName = '"+ $scope.search.FullName + "' OR MobileNo = '" + $scope.search.FullName + "'" ;
+        var where = "FullName = '" + $scope.search.FullName + "' OR MobileNo = '" + $scope.search.FullName + "'";
         $http({
             url: '/Admission/GetDynamic?where=' + where + '&orderBy= StudentId',
             method: 'GET',
