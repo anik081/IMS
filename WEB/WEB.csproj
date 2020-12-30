@@ -227,6 +227,8 @@
     <Content Include="Content\img\loading.gif" />
     <Content Include="Content\img\LoginPageLogo.png" />
     <Content Include="Content\select2.css" />
+    <Content Include="imgTemp\John Sarker.png" />
+    <Content Include="img\John Sarker.png" />
     <Content Include="img\loading.gif" />
     <Content Include="img\portlet-collapse-icon-white.png" />
     <Content Include="img\portlet-expand-icon-white.png" />
@@ -401,7 +403,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="imgTemp\" />
     <Folder Include="Views\CourseMark\" />
     <Folder Include="Views\CourseOffer\" />
     <Folder Include="Views\Course\" />

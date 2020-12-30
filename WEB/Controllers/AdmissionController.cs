@@ -104,7 +104,7 @@ namespace WEB.Controllers
                 {
                     if (imageFile != null)
                     {
-                        string FolderPath = "~\\imgTemp";
+                        string FolderPath = "~\\img";
 
                         // create folder directory info
                         DirectoryInfo FolderDir = new DirectoryInfo(Server.MapPath(FolderPath));
@@ -120,10 +120,10 @@ namespace WEB.Controllers
                         //fileName = obj.PlayerName + "_" + obj.CountryName.Substring(0, 3) + extension;
                         string fileName = obj.FullName + extension;
                         obj.ImgaeLocation = "/img/" + fileName;
-                        tempFilePath = Path.Combine(Server.MapPath("~/imgTemp/"), fileName);
+                        //tempFilePath = Path.Combine(Server.MapPath("~/imgTemp/"), fileName);
                         actualFilePath = Path.Combine(Server.MapPath("~/img/"), fileName);
 
-                        //imageFile.SaveAs(tempFilePath);
+                        imageFile.SaveAs(actualFilePath);
                         imageFile = null;
                     }
 

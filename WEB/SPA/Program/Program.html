@@ -27,7 +27,7 @@
 							</div>
 							<div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.ProgramHeadId.$invalid && frm.ProgramHeadId.$touched}" data-toggle="tooltip" data-placement="bottom" title="Program Head">
 								<select class="bs-select form-control" name="ProgramHeadId" style="width: 100%" required ng-model="cmbProgramHead" ng-options="programhead.EmployeeName for programhead in employeeList track by programhead.EmployeeId  " ng-change="entity.ProgramHeadId =cmbProgramHead.EmployeeId">
-									<option value="">-- Program Head --</option>
+                                    <option value="" selected>{{entity.EmployeeName}}</option>
 
 								</select>
 								<span class="help-block" style="display:block;" ng-if="frm.ProgramHeadId.$error.required && frm.ProgramHeadId.$touched">Year is required</span>

@@ -38,6 +38,7 @@
 
     function clear() {
         $scope.entity = { ProgramId: 0, IsActive: true };
+        $scope.entity.EmployeeName = "-- Program Head --";
         $("#txtFocus").focus();
     };
 
@@ -158,6 +159,8 @@
     };
 
     $scope.rowClick = function (obj) {
+        
+        $scope.cmbProgramHead = obj;
         $scope.entity = obj;
         $('#txtFocus').focus();
     };

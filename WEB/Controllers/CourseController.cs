@@ -42,7 +42,20 @@ namespace WEB.Controllers
                 return Json(null, JsonRequestBehavior.AllowGet);
             }
         }
+        public JsonResult GetDynamicFaculty(string where, string orderBy)
+        {
+            try
+            {
 
+                var list = Facade.LU_Course.GetDynamic(where, orderBy);
+                string contentType = "application/json";
+                return Json(list, contentType, Encoding.UTF8, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(null, JsonRequestBehavior.AllowGet);
+            }
+        }
         public JsonResult courseProgramGetDynamic(string where, string orderBy)
         {
             try

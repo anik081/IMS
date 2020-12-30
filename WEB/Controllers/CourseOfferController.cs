@@ -42,7 +42,7 @@ namespace WEB.Controllers
         }
         
         [HttpPost]
-        public string Post(List<TRN_CourseOffer> lstCourseOffer, List<TRN_CourseOfferSchedule> lstCourseOfferSchedule, string transactionType)
+        public string Post(Int32 semester,List<TRN_CourseOffer> lstCourseOffer, List<TRN_CourseOfferSchedule> lstCourseOfferSchedule, string transactionType)
         {
             string ret = string.Empty;
 
@@ -52,6 +52,7 @@ namespace WEB.Controllers
                 {
                     item.UpdateBy = 1;
                     item.UpdateDate = DateTime.Now;
+                    item.SemesterId = semester;
                     ret = Facade.TRN_CourseOffer.Post(item, transactionType);
 
                     if (!string.IsNullOrEmpty(ret) && ret.Contains("successfully"))

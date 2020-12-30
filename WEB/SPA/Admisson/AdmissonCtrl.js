@@ -24,7 +24,14 @@
     function clear() {
         $scope.entity = { StudentId: 0 };
         $scope.entityEducation = { StudentEducationId: 0 };
-
+        $scope.entity.PhotoIdType = "-- Photo Id Type --";
+        $scope.entity.BloodGroup = "Blood Group";
+        $scope.entity.Gender = "Gender";
+        $scope.entity.MaritalStatus = "Marital Status";
+        $scope.entity.District = "District";
+        $scope.entity.Division = "Division";
+        $scope.BatchNameDDL = "-- Batch --";
+        $scope.programDDL = "-- Program --";
         $("#txtFocus").focus();
     };
     $('#dobirth').datepicker({
@@ -180,10 +187,7 @@
 
 
     };
-    $scope.rowClick = function (obj) {
-        $scope.entity = obj;
-        $('#txtFocus').focus();
-    };
+
     $scope.post = function (trnType) {
         var where = "Email = '" + $scope.entity.Email + "'";
         if ($scope.entity.StudentId > 0)
@@ -847,8 +851,29 @@
 
     //}]
     $scope.rowClick = function (obj) {
+        //$scope.entity.BatchNameDDL = "";
         $scope.entity = obj;
+        
+        for (i = 0; i < $scope.batchList.length; i++) {
+            if (obj.BatchNo == $scope.batchList[i].BatchId) {
+                $scope.BatchNameDDL = $scope.batchList[i].BatchName;
+                break;
+            }
+        }
+        $scope.cmbBatch = obj;
+        $scope.cmbProgram = obj;
+        $scope.cmbPhotoIdType = obj;
+        $scope.cmbBloodGroup = obj;
+        $scope.cmbGender = obj;
+        $scope.cmbMaritalStatus = obj;
+        $scope.cmbDistrict = obj;
+        $scope.cmbDivision = obj;
         fillEducationLst(obj.StudentId);
+        for (i = 0; i < $scope.programList.length; i++) {
+            if (obj.ProgramId == $scope.programList[i].ProgramId) {
+                $scope.programDDL = $scope.programList[i].ProgramTitle;
+            }
+        }
         $('#txtFocus').focus();
     };
 

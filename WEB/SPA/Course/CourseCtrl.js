@@ -18,6 +18,7 @@
 
     function clear() {
         $scope.entity = { CourseId: 0, IsActive: true };
+        $scope.entity.EmployeeName = "-- Select Instructor --";
         $("#txtFocus").focus();
     };
 
@@ -126,8 +127,9 @@
 
     function getList() {
         $scope.lsitBlock.start();
+        var whereCondition = "E.[EmployeeType] = 'Faculty'";
         $http({
-            url: "/Course/Get",
+            url: '/Course/GetDynamicFaculty?where=' + whereCondition + '&orderBy=E.[EmployeeName]',
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         }).success(function (data) {
@@ -256,6 +258,7 @@
     };
 
     $scope.rowClick = function (obj) {
+        $scope.cmbInstructor = obj;
         $scope.entity = obj;
         $('#txtFocus').focus();
     };

@@ -17,7 +17,7 @@
                         <div class="form-body">
                             <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.EmployeeType.$touched && frm.EmployeeType.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Employee Type">
                                 <select class="form-control" id="txtFocus" name="EmployeeType" ng-model="cmbEmployeeType" ng-options="employeeType.EmployeeType for employeeType in employeeList track by employeeType.EmployeeTypeId" ng-change="entity.EmployeeType = cmbEmployeeType.EmployeeType" required>
-                                    <option value="">-- Select Employee Type --</option>
+                                    <option value="" selected>{{entity.EmployeeType}}</option>
                                 </select>
                                 <span class="help-block" style="display: block;" ng-if="frm.EmployeeType.$error.required && frm.EmployeeType.$touched">Employee Type is required!</span>
                             </div>

@@ -196,7 +196,7 @@
                                                     <th class="sbold text-center">Date</th>
                                                     <th class="sbold text-center" width="5%">Action</th>
                                                 </tr>
-                                                <tr dir-paginate="item in entityListPaged | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count">
+                                                <tr dir-paginate="item in entityList | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count">
                                                     <td class="text-center">{{item.CourseCode}}</td>
                                                     <td class="text-center">{{item.CourseTitle}}</td>
                                                     <td class="text-center">{{item.Credits}}</td>
