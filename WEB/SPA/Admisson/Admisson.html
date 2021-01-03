@@ -340,7 +340,8 @@
                                             <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="Image">
                                                 <label ng-if="!entity.ImgaeLocation" style="color:coral"> Make Sure Your Image Resulution Is 200x200.</label>
                                                 <div class="input-group">
-                                                    <img id="abc" ng-src="{{entity.ImgaeLocation}}" alt="{{entity.FullName}}" width="200" height="200" style="border:5px solid black">
+                                                    <img  ng-src="{{entity.ImgaeLocation}}" alt="{{entity.FullName}}" ng-if="entity.ImgaeLocation" width="200" height="200" style="border:5px solid black">
+                                                    <img id="ImagePreview" ng-if="!entity.ImgaeLocation" width="200" height="200" style="border:3px solid black">
                                                 </div>
                                                 <span class="help-block" style="display: block;" ng-if="!entity.ImgaeLocation">Image Preview.</span>
                                             </div>

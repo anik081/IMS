@@ -874,8 +874,9 @@
                 $scope.programDDL = $scope.programList[i].ProgramTitle;
             }
         }
-        $('#txtFocus').focus();
 
+        $('#txtFocus').focus();
+        
     };
 
     $scope.resetForm = function () {
@@ -948,7 +949,7 @@
         //}
         if (files.length > 0) {
             var src = URL.createObjectURL(files[0]);
-            var preview = document.getElementById("abc");
+            var preview = document.getElementById("ImagePreview");
             preview.src = src;
             preview.style.display = "block";
         }
