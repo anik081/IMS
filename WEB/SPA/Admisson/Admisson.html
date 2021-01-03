@@ -330,15 +330,29 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="form-group">
+                                            <div class="form-group" >
                                                 <input id="uploadEditorImage" accept="image/x-png" type="file" multiple onchange="angular.element(this).scope().getFiles(this.files)" />
                                             </div>
                                             
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="form-group" ng-show="entity.ImgaeLocation" >
-                                                <img src="{{entity.ImgaeLocation}}" alt="{{entity.FullName}}" width="200" height="200">
+                                            
+                                            <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="Image">
+                                                <label ng-if="!entity.ImgaeLocation" style="color:coral"> Make Sure Your Image Resulution Is 200x200.</label>
+                                                <div class="input-group">
+                                                    <img id="abc" ng-src="{{entity.ImgaeLocation}}" alt="{{entity.FullName}}" width="200" height="200" style="border:5px solid black">
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="!entity.ImgaeLocation">Image Preview.</span>
                                             </div>
+
+                                            <!--<label float="right" ng-if="!entity.ImgaeLocation">  </label>-->
+                                            <!--<img id="abc" width="200" height="200" style="border:5px solid black"/>-->
+                                            <!--<label ng-if="!entity.ImgaeLocation" style="color:coral"> Make Sure Your Image Resulution Is 200x200.</label>
+                                            <div class="form-group">
+                                                <img id="abc" ng-src="{{entity.ImgaeLocation}}" alt="{{entity.FullName}}" width="200" height="200" style="border:5px solid black">
+                                                <span class="t-head" ng-if="!entity.ImgaeLocation">Preview Image.</span>
+                                            </div>
+                                            <p ng-if="!entity.ImgaeLocation">Image Previiew.</p>-->
                                         </div>
                                     </div>
                                 </div>

@@ -104,7 +104,7 @@ namespace WEB.Controllers
                 {
                     if (imageFile != null)
                     {
-                        string FolderPath = "~\\img";
+                        string FolderPath = "~\\imgTemp";
 
                         // create folder directory info
                         DirectoryInfo FolderDir = new DirectoryInfo(Server.MapPath(FolderPath));
@@ -115,15 +115,20 @@ namespace WEB.Controllers
                             // create directory
                             FolderDir.Create();
                         }
-                        //string fileName = Path.GetFileNameWithoutExtension(imageFile.FileName);
+                        string fileName = Path.GetFileNameWithoutExtension(imageFile.FileName);
                         string extension = Path.GetExtension(imageFile.FileName);
                         //fileName = obj.PlayerName + "_" + obj.CountryName.Substring(0, 3) + extension;
-                        string fileName = obj.FullName + extension;
+                        fileName = obj.FullName + extension;
                         obj.ImgaeLocation = "/img/" + fileName;
-                        //tempFilePath = Path.Combine(Server.MapPath("~/imgTemp/"), fileName);
+                        tempFilePath = Path.Combine(Server.MapPath("~/imgTemp/"), fileName);
                         actualFilePath = Path.Combine(Server.MapPath("~/img/"), fileName);
+                        imageFile.SaveAs(tempFilePath);
 
-                        imageFile.SaveAs(actualFilePath);
+                        Image image = Image.FromFile(tempFilePath);
+                        Bitmap bitmap = new Bitmap(image, new Size(200, 200));
+                        
+                        bitmap.Save(actualFilePath,ImageFormat.Png );
+                        image.Dispose();
                         imageFile = null;
                     }
 

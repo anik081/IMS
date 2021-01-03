@@ -1,4 +1,4 @@
-﻿app.controller("AdmissonCtrl", function ($scope, $cookieStore, $window, $location, $http, blockUI, $filter) {
+﻿app.controller("AdmissonCtrl", function ($scope, $cookieStore, $window, $location, $http, blockUI, $filter, $route) {
 
     $scope.DefaultPerPage = 5;
     $scope.currentPage = 1;
@@ -16,6 +16,7 @@
     var year = dateToday.getFullYear();
     getProgramTypeActive();
     yearLimit = 40;
+
     $scope.yearList = [];
     for (i = 0; i <= yearLimit; i++) {
         $scope.yearList.push({ "YearId": year - i });
@@ -853,7 +854,6 @@
     $scope.rowClick = function (obj) {
         //$scope.entity.BatchNameDDL = "";
         $scope.entity = obj;
-        
         for (i = 0; i < $scope.batchList.length; i++) {
             if (obj.BatchNo == $scope.batchList[i].BatchId) {
                 $scope.BatchNameDDL = $scope.batchList[i].BatchName;
@@ -875,10 +875,12 @@
             }
         }
         $('#txtFocus').focus();
+
     };
 
     $scope.resetForm = function () {
         clear();
+        $route.reload();
         $scope.educationList = [];
         $scope.frm.$setUntouched();
         $scope.frm.$setPristine();
@@ -930,6 +932,28 @@
     $scope.getFiles = function (file) {
         $scope.data = new FormData();
         var files = $("#uploadEditorImage").get(0).files;
+        //var fsize = files[0].size;
+
+        //if (fsize > 2000000) //do something if file size more than 1 mb (1048576)
+        //{
+        //    alert(fsize + " bites\nToo big!");
+        //} else {
+        //    alert(fsize + " bites\nYou are good to go!");
+        //}
+        //if (file.length = 0) {
+        //    var src = 'D://Microsoft projects/Updated IMS/IMS/WEB/img/default.png';
+        //    var preview = document.getElementById("lala");
+        //    preview.src = src;
+        //    previw.style, display = "block";
+        //}
+        if (files.length > 0) {
+            var src = URL.createObjectURL(files[0]);
+            var preview = document.getElementById("abc");
+            preview.src = src;
+            preview.style.display = "block";
+        }
+
+
         if (files.length > 0) {
             $scope.data.append("HelpSectionImages", files[0]);
         }
@@ -941,9 +965,9 @@
             data: $scope.data,
             success: function (response) {
             },
-            error: function (er) {
-                alert(er);
-            }
+            //error: function (er) {
+            //    alert(er);
+            //}
 
         });
 
