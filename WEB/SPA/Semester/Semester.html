@@ -15,14 +15,14 @@
                         <div class="form-body">
                             <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.SemesterType.$invalid && frm.SemesterType.$touched}" data-toggle="tooltip" data-placement="bottom" title="Semester Type">
                                 <select class="bs-select form-control" name="SemesterType" id="txtFocus" style="width: 100%" required ng-model="cmbSemester" ng-click="setSemesterCode()" ng-options="semester.SemesterTypeName for semester in semesterTypeList track by semester.SemesterTypeId" ng-change="entity.SemesterTypeName=cmbSemester.SemesterTypeName; entity.SemesterTypeId=cmbSemester.SemesterTypeId">
-                                    <option value="">-- Semester --</option>
+                                    <option value="" selected>{{SemesterDDL}}</option>
 
                                 </select>
                                 <span class="help-block" style="display:block;" ng-if="frm.SemesterType.$error.required && frm.SemesterType.$touched">Semester is required</span>
                             </div>
                             <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.YearId.$invalid && frm.YearId.$touched}" data-toggle="tooltip" data-placement="bottom" title="Year Id">
                                 <select class="bs-select form-control" name="YearId" style="width: 100%" required ng-model="cmbYear" ng-click="setSemesterCode()" ng-options="year.YearId for year in yearList track by year.YearId " ng-change="entity.YearId=cmbYear.YearId">
-                                    <option value="">-- Year --</option>
+                                    <option value="" selected>{{YearIdDDL}}</option>
 
                                 </select>
                                 <span class="help-block" style="display:block;" ng-if="frm.YearId.$error.required && frm.YearId.$touched">Year is required</span>

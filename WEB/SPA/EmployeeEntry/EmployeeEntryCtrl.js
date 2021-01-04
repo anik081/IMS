@@ -16,6 +16,7 @@
 
     function clear() {
         $scope.entity = { EmployeeId: 0, IsActive: true };
+        $scope.entity.EmployeeType = "--Select Employee Type--";
         $("#txtFocus").focus();
     };
 
@@ -31,7 +32,7 @@
         "EmployeeTypeId": "3",
         "EmployeeType": "HR",
         IsSelected: false
-        }]
+    }]
 
     function getList() {
         $scope.lsitBlock.start();
@@ -150,6 +151,10 @@
     };
 
     $scope.rowClick = function (obj) {
+        var lstobj = { EmployeeType: 0, EmployeeTypeId: 0 }
+        lstobj.EmployeeType = obj.EmployeeType;
+        lstobj.EmployeeTypeId = obj.EmployeeType;
+        $scope.cmbEmployeeType = lstobj;
         $scope.entity = obj;
         $('#txtFocus').focus();
     };
@@ -158,6 +163,5 @@
         clear();
         $scope.frm.$setUntouched();
         $scope.frm.$setPristine();
-        $scope.cmbEmployeeType = '-- Select Employee Type --';
     };
 });

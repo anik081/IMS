@@ -48,8 +48,8 @@
                                 <span class="help-block" style="display:block;" ng-if="frm.Prerequisite.$error.required && frm.Prerequisite.$touched">Prerequisite is required</span>
                             </div>-->
                             <div class="form-group" style="padding: 5px 15px !important" ng-class="{'has-error':frm.CourseInstructor.$touched && frm.CourseInstructor.$invalid}" data-toggle="tooltip" data-placement="bottom" title="Course Instructor">
-                                <select class="form-control" name="CourseInstructor" ng-model="cmbInstructor" ng-options="instructor.EmployeeName for instructor in employeeList track by instructor.EmployeeId  " ng-change="aInsructor.InstructorId =cmbInstructor.EmployeeId"required >
-									<option value="">-- Select Instructor --</option>
+                                <select class="form-control" name="CourseInstructor" ng-model="cmbInstructor" ng-options="instructor.EmployeeName for instructor in employeeList track by instructor.EmployeeId  " ng-change="entity.InstructorId =cmbInstructor.EmployeeId"required >
+									<option value="">{{entity.EmployeeName}}</option>
 								</select>
                                 <span class="help-block" style="display: block;" ng-if="frm.CourseInstructor.$error.required && frm.CourseInstructor.$touched">Course Instructor is required!</span>
                             </div>

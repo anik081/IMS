@@ -9,6 +9,7 @@ namespace QtImsEntity
 		public Int32 InstituteId { get; set; }
 		public string CourseCode { get; set; }
 		public string CourseTitle { get; set; }
+		public string EmployeeName { get; set; }
 		public Int32 Credits { get; set; }
 		public Int32 InstructorId { get; set; }
 		public bool IsActive { get; set; }

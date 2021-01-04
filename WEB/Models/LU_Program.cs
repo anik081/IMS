@@ -8,7 +8,8 @@ namespace QtImsEntity
 		public Int32 ProgramId { get; set; }
 		public Int32 InstituteId { get; set; }
 		public Int32 ProgramHeadId { get; set; }
-		public string ProgramTitle { get; set; }
+        public string EmployeeName { get; set; }
+        public string ProgramTitle { get; set; }
 		public string ProgramCode { get; set; }
 		public Int32 TotalCredit { get; set; }
 		public Int32 DurationInMonth { get; set; }

@@ -195,7 +195,6 @@
         $scope.frm.$setUntouched();
         $scope.frm.$setPristine();
         $scope.cmbSemester = "-- Semester --";
-        $scope.cmbSelectStudent = "-- Select Student --";
         $scope.cmbCourse = "-- Select Course --";
     };
 

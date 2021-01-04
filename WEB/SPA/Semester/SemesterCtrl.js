@@ -10,11 +10,11 @@
     $scope.lsitBlock = blockUI.instances.get('lsitBlock');
     clear();
     getList();
-    getSemesterTypeActive();
+    
     dateToday = new Date();
     var year = dateToday.getFullYear();
     yearLimit = 5;
-    $scope.yearList = [];
+    
     for (i = 0; i < yearLimit; i++) {
         $scope.yearList.push({ "YearId": year + i });
     }
@@ -93,7 +93,12 @@
     }); 
 
     function clear() {
-        $scope.entity = { SemesterId: 0, IsActive: true};
+        $scope.semesterTypeList = [];
+        $scope.entity = { SemesterId: 0, IsActive: true };
+        $scope.SemesterDDL = "-- Semester --";
+        $scope.YearIdDDL = "-- Year --";
+        getSemesterTypeActive();
+        $scope.yearList = [];
         $("#txtFocus").focus();
     };
 
@@ -296,14 +301,19 @@
     }
 
     $scope.rowClick = function (obj) {
+        $scope.cmbYear = obj;
+        $scope.cmbSemester = obj;
         $scope.entity = obj;
+        var semesterName = $scope.entity.SemesterName.split(" ");
+        var semester = semesterName[0];
+        var year = semesterName[1];
+        $scope.SemesterDDL = semester;
+        $scope.YearIdDDL = year;
         $('#txtFocus').focus();
     };
 
     $scope.resetForm = function () {
-        clear();
-        $scope.cmbSemester = "-- Semester --";
-        $scope.cmbYear = "-- Year --";
+        clear(); 
         $scope.frm.$setUntouched();
         $scope.frm.$setPristine();
     };

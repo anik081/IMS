@@ -158,7 +158,7 @@
     }
 
     function getCourse() {
-        var where = "IsActive = 1";
+        var where = "C.[IsActive] = 1";
         $http({
             url: '/Course/GetDynamic?where=' + where + '&orderBy=CourseCode',
             method: 'GET',
@@ -243,7 +243,7 @@
             trnType = "INSERT";
         }
         var selectedList = Enumerable.From($scope.courseTypeList).Where("$.IsSelected == true").ToArray();
-        var params = JSON.stringify({ lstCourseOffer: selectedList, lstCourseOfferSchedule: $scope.scheduleList, transactionType: trnType });
+        var params = JSON.stringify({ semester: $scope.courseTypeList.SemesterId , lstCourseOffer: selectedList, lstCourseOfferSchedule: $scope.scheduleList, transactionType: trnType });
 
         $http.post('/CourseOffer/Post', params).success(function (data) {
             if (data != '') {

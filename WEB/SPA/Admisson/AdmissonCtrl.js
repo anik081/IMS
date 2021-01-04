@@ -1,4 +1,4 @@
-﻿app.controller("AdmissonCtrl", function ($scope, $cookieStore, $window, $location, $http, blockUI, $filter) {
+﻿app.controller("AdmissonCtrl", function ($scope, $cookieStore, $window, $location, $http, blockUI, $filter, $route) {
 
     $scope.DefaultPerPage = 5;
     $scope.currentPage = 1;
@@ -16,6 +16,7 @@
     var year = dateToday.getFullYear();
     getProgramTypeActive();
     yearLimit = 40;
+
     $scope.yearList = [];
     for (i = 0; i <= yearLimit; i++) {
         $scope.yearList.push({ "YearId": year - i });
@@ -24,7 +25,14 @@
     function clear() {
         $scope.entity = { StudentId: 0 };
         $scope.entityEducation = { StudentEducationId: 0 };
-
+        $scope.entity.PhotoIdType = "-- Photo Id Type --";
+        $scope.entity.BloodGroup = "Blood Group";
+        $scope.entity.Gender = "Gender";
+        $scope.entity.MaritalStatus = "Marital Status";
+        $scope.entity.District = "District";
+        $scope.entity.Division = "Division";
+        $scope.BatchNameDDL = "-- Batch --";
+        $scope.programDDL = "-- Program --";
         $("#txtFocus").focus();
     };
     $('#dobirth').datepicker({
@@ -180,10 +188,7 @@
 
 
     };
-    $scope.rowClick = function (obj) {
-        $scope.entity = obj;
-        $('#txtFocus').focus();
-    };
+
     $scope.post = function (trnType) {
         var where = "Email = '" + $scope.entity.Email + "'";
         if ($scope.entity.StudentId > 0)
@@ -674,43 +679,9 @@
 
     }, {
         "BatchId": "4",
-        "BatchName": "Batch-4"
-    }, {
-        "BatchId": "5",
-        "BatchName": "Batch-5"
-    }, {
-        "BatchId": "6",
-        "BatchName": "Batch-6"
-
-    },
-    {
-        "BatchId": "7",
-        "BatchName": "Batch-7"
-    }, {
-        "BatchId": "8",
-        "BatchName": "Batch-8"
-    }, {
-        "BatchId": "9",
-        "BatchName": "Batch-9"
-
-    }, {
-        "BatchId": "10",
-        "BatchName": "Batch-10"
-    }, {
-        "BatchId": "11",
-        "BatchName": "Batch-11"
-    }, {
-        "BatchId": "12",
-        "BatchName": "Batch-12"
-    }, {
-        "BatchId": "13",
-        "BatchName": "Batch-13"
-
-    }, {
-        "BatchId": "14",
         "BatchName": "Batch-14"
     }, {
-        "BatchId": "15",
+        "BatchId": "5",
         "BatchName": "Batch-15"
     }, {
         "BatchId": "16",
@@ -765,17 +736,17 @@
         "BatchId": "30",
         "BatchName": "Batch-30"
     }, {
-        "BatchId": "31",
+        "BatchId": "21",
         "BatchName": "Batch-31"
 
     }, {
-        "BatchId": "32",
+        "BatchId": "22",
         "BatchName": "Batch-32"
     }, {
-        "BatchId": "33",
+        "BatchId": "23",
         "BatchName": "Batch-33"
     }, {
-        "BatchId": "34",
+        "BatchId": "24",
         "BatchName": "Batch-34"
 
     }]
@@ -836,8 +807,12 @@
 
         },
         {
-            "BoardId": "8",
+            "BoardId": "9",
             "BoardName": "Dinajpur"
+        },
+        {
+            "BoardId": "10",
+            "BoardName": "Comilla"
         }
     ]
     //$scope.yearList = [{
@@ -857,13 +832,36 @@
 
     //}]
     $scope.rowClick = function (obj) {
+        //$scope.entity.BatchNameDDL = "";
         $scope.entity = obj;
+        for (i = 0; i < $scope.batchList.length; i++) {
+            if (obj.BatchNo == $scope.batchList[i].BatchId) {
+                $scope.BatchNameDDL = $scope.batchList[i].BatchName;
+                break;
+            }
+        }
+        $scope.cmbBatch = obj;
+        $scope.cmbProgram = obj;
+        $scope.cmbPhotoIdType = obj;
+        $scope.cmbBloodGroup = obj;
+        $scope.cmbGender = obj;
+        $scope.cmbMaritalStatus = obj;
+        $scope.cmbDistrict = obj;
+        $scope.cmbDivision = obj;
         fillEducationLst(obj.StudentId);
+        for (i = 0; i < $scope.programList.length; i++) {
+            if (obj.ProgramId == $scope.programList[i].ProgramId) {
+                $scope.programDDL = $scope.programList[i].ProgramTitle;
+            }
+        }
+
         $('#txtFocus').focus();
+        
     };
 
     $scope.resetForm = function () {
         clear();
+        $route.reload();
         $scope.educationList = [];
         $scope.frm.$setUntouched();
         $scope.frm.$setPristine();
@@ -915,6 +913,28 @@
     $scope.getFiles = function (file) {
         $scope.data = new FormData();
         var files = $("#uploadEditorImage").get(0).files;
+        //var fsize = files[0].size;
+
+        //if (fsize > 2000000) //do something if file size more than 1 mb (1048576)
+        //{
+        //    alert(fsize + " bites\nToo big!");
+        //} else {
+        //    alert(fsize + " bites\nYou are good to go!");
+        //}
+        //if (file.length = 0) {
+        //    var src = 'D://Microsoft projects/Updated IMS/IMS/WEB/img/default.png';
+        //    var preview = document.getElementById("lala");
+        //    preview.src = src;
+        //    previw.style, display = "block";
+        //}
+        if (files.length > 0) {
+            var src = URL.createObjectURL(files[0]);
+            var preview = document.getElementById("ImagePreview");
+            preview.src = src;
+            preview.style.display = "block";
+        }
+
+
         if (files.length > 0) {
             $scope.data.append("HelpSectionImages", files[0]);
         }
@@ -926,9 +946,9 @@
             data: $scope.data,
             success: function (response) {
             },
-            error: function (er) {
-                alert(er);
-            }
+            //error: function (er) {
+            //    alert(er);
+            //}
 
         });
 

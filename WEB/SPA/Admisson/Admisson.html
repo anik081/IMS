@@ -172,7 +172,7 @@
                                         </div>
                                         <div class="col-md-4" ng-class="{'has-error':frm.PhotoIdType.$invalid && frm.PhotoIdType.$touched}" data-toggle="tooltip" data-placement="bottom" title="Photo Id Type">
                                             <select class="bs-select form-control" name="PhotoIdType" style="width: 100%" required ng-model="cmbPhotoIdType" ng-options="photoIdType.PhotoIdType for photoIdType in photoIdTypeList track by photoIdType.PhotoId " ng-change="entity.PhotoIdType=cmbPhotoIdType.PhotoIdType">
-                                                <option value="">-- Photo Id Type--</option>
+                                                <option value="">{{entity.PhotoIdType}}</option>
                                             </select>
                                             <span class="help-block" style="display:block;" ng-if="frm.PhotoIdType.$error.required && frm.PhotoIdType.$touched">Photo Id Type is required</span>
                                         </div>
@@ -222,7 +222,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group" ng-class="{ 'has-error' : frm.BloodGroup.$touched && frm.BloodGroup.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Blood Group">
                                                 <select class="bs-select form-control" style="width: 100%" name="BloodGroup" required ng-model="cmbBloodGroup" ng-options="bloodGroup.BloodGroupType for bloodGroup in bloodGroupList track by bloodGroup.BloodGroupId " ng-change="entity.BloodGroup=cmbBloodGroup.BloodGroupType">
-                                                    <option value="">Blood Group</option>
+                                                    <option value="" selected>{{entity.BloodGroup}}</option>
                                                 </select>
                                                 <span class="help-block" style="display: block;" ng-if="frm.BloodGroup.$error.required && frm.BloodGroup.$touched">Blood Group is required</span>
                                             </div>
@@ -230,7 +230,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group" ng-class="{ 'has-error' : frm.Gender.$touched && frm.Gender.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Gender">
                                                 <select class=" bs-select form-control" name="Gender" required ng-model="cmbGender" ng-options="gender.GenderType for gender in genderList track by gender.GenderId " ng-change="entity.Gender=cmbGender.GenderType">
-                                                    <option value="">Gender</option>
+                                                    <option value="" selected>{{entity.Gender}}</option>
                                                 </select>
                                                 <span class="help-block" style="display: block;" ng-if="frm.Gender.$error.required && frm.Gender.$touched">Gender is required</span>
                                             </div>
@@ -238,7 +238,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group" ng-class="{ 'has-error' : frm.MaritalStatus.$touched && frm.MaritalStatus.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Marital Status">
                                                 <select class="bs-select form-control" name="MaritalStatus" required ng-model="cmbMaritalStatus" ng-options="maritalStatus.MaritalStatusType for maritalStatus in maritalStatusList track by maritalStatus.MaritalStatusId " ng-change="entity.MaritalStatus=cmbMaritalStatus.MaritalStatusType">
-                                                    <option value="">Marital Status</option>
+                                                    <option value="" selected>{{entity.MaritalStatus}}</option>
                                                 </select>
                                                 <span class="help-block" style="display: block;" ng-if="frm.MaritalStatus.$error.required && frm.MaritalStatus.$touched">Marital Status is required</span>
                                             </div>
@@ -300,7 +300,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group" ng-class="{ 'has-error' : frm.District.$touched && frm.District.$invalid }" data-toggle="tooltip" data-placement="bottom" title="District">
                                                 <select class="bs-select form-control" name="District" required ng-model="cmbDistrict" ng-options="district.DistrictName for district in districtList track by district.DistrictId " ng-change="entity.District=cmbDistrict.DistrictName">
-                                                    <option value="">District</option>
+                                                    <option value=""selected>{{entity.District}}</option>
                                                 </select>
                                                 <span class="help-block" style="display: block;" ng-if="frm.District.$error.required && frm.District.$touched">District is required</span>
                                             </div>
@@ -309,7 +309,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group" ng-class="{ 'has-error' : frm.Division.$touched && frm.Division.$invalid }" data-toggle="tooltip" data-placement="bottom" title="Division">
                                                 <select class="bs-select form-control" name="Division" required ng-model="cmbDivision" ng-options="division.DivisionName for division in divisionList track by division.DivisionId " ng-change="entity.Division=cmbDivision.DivisionName">
-                                                    <option value="">Division</option>
+                                                    <option value=""selected>{{entity.Division}}</option>
                                                 </select>
                                                 <span class="help-block" style="display: block;" ng-if="frm.Division.$error.required && frm.Division.$touched">Division is required</span>
                                             </div>
@@ -330,9 +330,30 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="form-group">
+                                            <div class="form-group" >
                                                 <input id="uploadEditorImage" accept="image/x-png" type="file" multiple onchange="angular.element(this).scope().getFiles(this.files)" />
                                             </div>
+                                            
+                                        </div>
+                                        <div class="col-md-4">
+                                            
+                                            <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="Image">
+                                                <label ng-if="!entity.ImgaeLocation" style="color:coral"> Make Sure Your Image Resulution Is 200x200.</label>
+                                                <div class="input-group">
+                                                    <img  ng-src="{{entity.ImgaeLocation}}" alt="{{entity.FullName}}" ng-if="entity.ImgaeLocation" width="200" height="200" style="border:5px solid black">
+                                                    <img id="ImagePreview" ng-if="!entity.ImgaeLocation" width="200" height="200" style="border:3px solid black">
+                                                </div>
+                                                <span class="help-block" style="display: block;" ng-if="!entity.ImgaeLocation">Image Preview.</span>
+                                            </div>
+
+                                            <!--<label float="right" ng-if="!entity.ImgaeLocation">  </label>-->
+                                            <!--<img id="abc" width="200" height="200" style="border:5px solid black"/>-->
+                                            <!--<label ng-if="!entity.ImgaeLocation" style="color:coral"> Make Sure Your Image Resulution Is 200x200.</label>
+                                            <div class="form-group">
+                                                <img id="abc" ng-src="{{entity.ImgaeLocation}}" alt="{{entity.FullName}}" width="200" height="200" style="border:5px solid black">
+                                                <span class="t-head" ng-if="!entity.ImgaeLocation">Preview Image.</span>
+                                            </div>
+                                            <p ng-if="!entity.ImgaeLocation">Image Previiew.</p>-->
                                         </div>
                                     </div>
                                 </div>
@@ -414,6 +435,7 @@
                                                             <th class="sbold">Exam</th>
                                                             <th class="sbold text-center" data-th="Details"><span>Board</span></th>
                                                             <th class="sbold text-center">Passing Year</th>
+
                                                             <th class="sbold text-center">GPA</th>
                                                             <th class="sbold text-center">Institute</th>
                                                             <th class="sbold text-center">Institute Address</th>
@@ -446,13 +468,13 @@
                                     <div class="row">
                                         <div class="col-md-6" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Batch.$invalid && frm.Batch.$touched}" data-toggle="tooltip" data-placement="bottom" title="Batch">
                                             <select class="bs-select form-control" name="Batch" style="width: 100%" required ng-model="cmbBatch" ng-options="batch.BatchName for batch in batchList track by batch.BatchId " ng-change="entity.BatchNo=cmbBatch.BatchId">
-                                                <option value="">-- Batch --</option>
+                                                <option value="" selected>{{BatchNameDDL}}</option>
                                             </select>
                                             <span class="help-block" style="display:block;" ng-if="frm.Batch.$error.required && frm.Batch.$touched">Batch is required</span>
                                         </div>
                                         <div class="col-md-6" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Program.$invalid && frm.Program.$touched}" data-toggle="tooltip" data-placement="bottom" title="Program">
                                             <select class="bs-select form-control" name="Program" style="width: 100%" required ng-model="cmbProgram" ng-options="program.ProgramTitle for program in programList track by program.ProgramId " ng-change="entity.ProgramId=cmbProgram.ProgramId">
-                                                <option value="">-- Program --</option>
+                                                <option value="" selected>{{programDDL}}</option>
                                             </select>
                                             <span class="help-block" style="display:block;" ng-if="frm.Program.$error.required && frm.Program.$touched">Program is required</span>
                                         </div>
@@ -497,7 +519,7 @@
     </div>
 </div>
 <div class="form-actions noborder pull-right" style="margin-top: 10px; margin-bottom: 10px" ng-show="!SaOrReview.FlagSelfAppraisal" block-ui="rvwSaveBlock">
-    <button type="button" class="btn btn-lg purple box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-disabled="frm.$invalid" ng-click="post('save')">Lock & Submit</button><!--LockSaOrReview()-->
+    <button type="button" class="btn btn-lg purple box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-disabled="!entity.FullName || !entity.MobileNo || !entity.Email || !entity.FatherName || !entity.FatherOccupation || !entity.MotherName || !entity.MotherOccupation || !entity.GuardianName || !entity.RelationWithGuardian || !entity.GuardianMobileNo || !cmbPhotoIdType || !entity.PhotoIdNo || !entity.DateOfBirth || !entity.PlaceofBirth || !cmbGender || !entity.HoldingNoAndRoad || !entity.PoliceStation || !entity.PostOffice || !entity.PostOffice || !entity.Upazila || !cmbDistrict || !cmbDivision || !entity.IdCard" ng-click="post('save')">Lock & Submit</button><!--LockSaOrReview()-->
     <button type="button" class="btn btn-lg btn-danger box-shadow--8dp" style="min-width:90px !important; margin-right: 10px; margin-bottom: 5px" ng-show="entity.StudentId > 0" ng-click="post('delete')">Delete</button>
     <button type="button" class="btn btn-lg btn-default box-shadow--8dp" style="min-width:90px !important; margin-bottom: 5px" ng-click="resetForm()">Reset</button>
 </div>
@@ -529,15 +551,15 @@
                             <table class="responstable table-hover">
                                 <tbody>
                                     <tr class="t-head" style="font-size: 14px !important;">
-                                        <th class="sbold  text-center" data-th="Details">Name</th>
-                                        <th class="sbold text-center"><span>Mobile No</span></th>
+                                        <th class="sbold">Name</th>
+                                        <th class="sbold text-center" data-th="Details"><span>Mobile No</span></th>
                                         <th class="sbold text-center">Email</th>
                                         <th class="sbold text-center">Address</th>
 
 
                                     </tr>
                                     <tr dir-paginate="item in entityListPaged | filter:q | itemsPerPage: PerPage" current-page="currentPage" total-items="total_count" ng-click="rowClick(item)" ng-class="{ 'rowSelected' : entity.StudentId === item.StudentId}">
-                                        <td class="text-center"style="padding:25px">{{item.FullName}}</td>
+                                        <td class="text-center">{{item.FullName}}</td>
                                         <td class="text-center">{{item.MobileNo}}</td>
                                         <td class="text-center">{{item.Email}}</td>
                                         <td class="text-center">{{item.HoldingNoAndRoad}}</td>

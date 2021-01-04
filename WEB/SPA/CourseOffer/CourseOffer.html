@@ -19,7 +19,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6" style="padding: 5px 15px !important" ng-class="{'has-error':frm.Semester.$invalid && frm.Semester.$touched}" data-toggle="tooltip" data-placement="bottom" title="Semester">
-                                <select class="bs-select form-control" id="txtFocus" name="Semester" style="width: 100%" required ng-model="cmbSemester" ng-options="semester.SemesterName for semester in semesterTypeList track by semester.SemesterId " ng-change="courseTypeList.SemesterName=cmbSemester.SemesterName;courseTypeList.SemesterId=cmbSemester.SemesterId">
+                                <select class="bs-select form-control" id="txtFocus" name="Semester" style="width: 100%" required ng-model="cmbSemester" ng-options="semester.SemesterName for semester in semesterTypeList track by semester.SemesterId " ng-change="courseTypeList.SemesterId=cmbSemester.SemesterId">
                                     <option value="">-- Semester --</option>
                                 </select>
                                 <span class="help-block" style="display:block;" ng-if="frm.Semester.$error.required && frm.Semester.$touched">Semester is required</span>
